@@ -1,8 +1,9 @@
 import { Component, Input, OnInit} from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pensamento',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './pensamento.html',
   styleUrl: './pensamento.css',
 })
@@ -18,6 +19,13 @@ export class Pensamento implements OnInit{
   }
 
   ngOnInit(): void {
+  }
+
+  larguraPensamento(): string {
+    if(this.pensamento.conteudo.length >= 256){
+      return 'pensamento-g';
+    }
+    return 'pensamento-p';
   }
 
 }
