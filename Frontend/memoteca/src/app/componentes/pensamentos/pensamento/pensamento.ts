@@ -4,6 +4,7 @@ import { InfoPensamento } from './../infoPensamento';
 
 @Component({
   selector: 'app-pensamento',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './pensamento.html',
   styleUrl: './pensamento.css',
