@@ -6,6 +6,7 @@ export const routes: Routes = [
   {
     path:'',
     redirectTo:'listarPensamento',
+    pathMatch:'full'
   },
   {
     path:'criarPensamento',
