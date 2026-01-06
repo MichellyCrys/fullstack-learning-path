@@ -20,6 +20,11 @@ export class PensamentoService {
     return this.http.post<InfoPensamento>(this.API, pensamento);
   }
 
+  editarPensamento(pensamento: InfoPensamento): Observable<InfoPensamento>{
+    const url = `${this.API}/${pensamento.id}`;
+    return this.http.put<InfoPensamento>(url, pensamento);
+  }
+
   excluir(id: number): Observable<InfoPensamento>{
     const url = `${this.API}/${id}`;
     return this.http.delete<InfoPensamento>(url);

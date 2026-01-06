@@ -9,7 +9,6 @@ import { PensamentoService } from '../pensamento.service';
   standalone: true,
   imports: [
     FormsModule,
-    RouterLink
   ],
   templateUrl: './criar-pensamento.html',
   styleUrl: './criar-pensamento.css',
