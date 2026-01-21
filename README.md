@@ -37,7 +37,9 @@ O MemoTeca é um mural de pensamentos virtual. Nele, é possível armazenar cita
 
 ## 🏗️ DevOps & Infraestrutura
 
-### [Docker Completo do Zero ao Avançado (Udemy)](./DevOps/Docker)
+### [Docker Completo do Zero ao Avançado (Udemy)](./DevOps/git add README.md
+git commit -m "docs: atualizando lista de tecnologias e introdução"
+git push origin maindocker)
 **Instrutor:** *Udemy - Curso Prático*
 
 Este curso foca na construção, teste e implementação de containers, abrangendo desde conceitos básicos até estratégias avançadas de deploy.
