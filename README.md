@@ -1,6 +1,6 @@
-# 📚 Meus Cursos e Projetos (Alura)
+# 📚 Meus Cursos e Projetos (Alura, Udemy)
 
-Este repositório centraliza os projetos que desenvolvi durante minha jornada de aprendizado em Backend e Frontend, focando em tecnologias como Python (Flask) e Angular.
+Este repositório centraliza os projetos que desenvolvi durante minha jornada de aprendizado em Backend, Frontend e DevOps, focando em tecnologias como Python (Flask), Angular e Docker.
 
 ---
 
@@ -35,12 +35,29 @@ O MemoTeca é um mural de pensamentos virtual. Nele, é possível armazenar cita
 
 ---
 
+## 🏗️ DevOps & Infraestrutura
+
+### [Docker Completo do Zero ao Avançado (Udemy)](./DevOps/Docker)
+**Instrutor:** *Udemy - Curso Prático*
+
+Este curso foca na construção, teste e implementação de containers, abrangendo desde conceitos básicos até estratégias avançadas de deploy.
+
+**O que estou aprendendo:**
+* **Fundamentos de Containers:** Entendimento profundo sobre o que é Docker e como utilizar a plataforma.
+* **Ecossistema Docker:** Instalação e uso do Docker em diferentes sistemas (Linux, Windows, macOS).
+* **Imagens e Docker Hub:** Criação, acesso e publicação de imagens personalizadas no Docker Hub.
+* **Ambientes de Desenvolvimento:** Configuração de ambientes onde o código é executado 100% dentro de containers.
+* **Deploy de Aplicações:** Habilidades práticas para implantar aplicativos de forma eficiente.
+
+---
+
+
 ## 🛠️ Tecnologias Utilizadas
 
 * **Linguagens:** Python, TypeScript, HTML, CSS.
 * **Frameworks:** Flask (Python), Angular (v14+).
 * **Estilização:** Bootstrap.
-* **Ferramentas:** Git, GitHub, Angular CLI.
+* **Ferramentas:** Git, GitHub, Angular CLI, Docker.
 
 ---
 Desenvolvido por Michelly Crystiane.
