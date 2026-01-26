@@ -38,16 +38,21 @@ O MemoTeca é um mural de pensamentos virtual. Nele, é possível armazenar cita
 ## 🏗️ DevOps & Infraestrutura
 
 ### [Docker Completo do Zero ao Avançado (Udemy)](./DevOps/docker)
-**Instrutor:** *Udemy - Curso Prático*
+**Cursor:** *Udemy - DOCKER Completo do Zero ao Avançado*
 
-Este curso foca na construção, teste e implementação de containers, abrangendo desde conceitos básicos até estratégias avançadas de deploy.
+Neste curso, aprendi a construir, testar e implementar containers do zero ao avançado. Como projeto final, utilizei o **Docker Compose** para orquestrar uma aplicação completa com Backend e Frontend integrados.
 
-**O que estou aprendendo:**
-* **Fundamentos de Containers:** Entendimento profundo sobre o que é Docker e como utilizar a plataforma.
-* **Ecossistema Docker:** Instalação e uso do Docker em diferentes sistemas (Linux, Windows, macOS).
-* **Imagens e Docker Hub:** Criação, acesso e publicação de imagens personalizadas no Docker Hub.
-* **Ambientes de Desenvolvimento:** Configuração de ambientes onde o código é executado 100% dentro de containers.
-* **Deploy de Aplicações:** Habilidades práticas para implantar aplicativos de forma eficiente.
+**O que foi desenvolvido/aprendido:**
+* **Orquestração:** Criação de arquivos `docker-compose.yml` para rodar múltiplos serviços simultaneamente.
+* **Persistência de Dados:** Uso de volumes para garantir que dados (como bancos de dados) não sejam perdidos ao reiniciar containers.
+* **Redes no Docker:** Comunicação entre containers de diferentes tecnologias.
+* **Imagens Personalizadas:** Criação de imagens otimizadas para ambientes de desenvolvimento e produção.
+
+#### 📝 Comandos Úteis Praticados:
+* **Gerenciamento de Containers:** `docker run`, `docker stop`, `docker start`, `docker rm`.
+* **Visualização e Inspeção:** `docker ps -a`, `docker volume inspect`.
+* **Volumes e Portas:** `docker run -d -p 3000:3000 -v nome-volume:/caminho/dados imagem:tag`.
+* **Docker Compose:** `docker compose up`, `docker compose down`, `docker compose ps`, `docker compose up --build`.
 
 ---
 
@@ -57,7 +62,7 @@ Este curso foca na construção, teste e implementação de containers, abrangen
 * **Linguagens:** Python, TypeScript, HTML, CSS.
 * **Frameworks:** Flask (Python), Angular (v14+).
 * **Estilização:** Bootstrap.
-* **Ferramentas:** Git, GitHub, Angular CLI, Docker.
+* **Ferramentas:** Git, GitHub, Angular CLI, **Docker & Docker Compose**.
 
 ---
 Desenvolvido por Michelly Crystiane.
