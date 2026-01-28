@@ -1,59 +1,64 @@
-# Memoteca
+# 📝 MemoTeca - Mural de Pensamentos
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+O **MemoTeca** é um mural de pensamentos virtual desenvolvido em Angular. A aplicação funciona como um repositório pessoal onde é possível armazenar citações de livros, trechos de músicas e frases inspiradoras para consultas futuras ou legendas de fotos.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Funcionalidades (CRUD Completo)
 
-```bash
-ng serve
-```
+Neste projeto, foi desenvolvido um fluxo completo de gerenciamento de dados:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+* **Criar Pensamento:** Interface para adicionar novas frases, permitindo escolher entre diferentes modelos visuais.
+* **Listar Pensamentos:** Visualização de todos os cards salvos, consumindo dados de uma API local.
+* **Editar Pensamento:** Possibilidade de atualizar o conteúdo ou a autoria de pensamentos já existentes.
+* **Excluir Pensamento:** Remoção de registros do mural com confirmação.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🛠️ Conceitos de Angular Aplicados
 
-```bash
-ng generate component component-name
-```
+Durante o desenvolvimento, foram explorados os seguintes pilares do framework:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+* **Componentização:** Divisão da interface em partes reutilizáveis como `Cabeçalho`, `Rodapé` e `Pensamentos`.
+* **Data Binding:** Uso intensivo de *Property Binding*, *Event Binding* e *Two-way Data Binding* (`[(ngModel)]`) para sincronização de dados.
+* **Serviços e Injeção de Dependência:** Criação do `PensamentoService` para centralizar a comunicação com a API via `HttpClient`.
+* **Roteamento Dinâmico:** Configuração de rotas para navegação fluida entre a listagem e os formulários de criação/edição.
+* **Diretivas:** Uso de diretivas estruturais como `*ngFor` para listar os cards e `*ngIf` para validações.
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 💻 Tecnologias e Ferramentas
 
-To build the project run:
+* **Framework:** Angular (v14+).
+* **Backend Simulado:** JSON Server para simular uma API REST.
+* **Estilização:** CSS Customizado focado em layouts responsivos.
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🚀 Como Executar o Projeto
 
-## Running unit tests
+Este projeto requer o **Node.js** e o **Angular CLI** instalados.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+1.  **Instale as dependências do frontend:**
+    ```bash
+    npm install
+    ```
 
-```bash
-ng test
-```
+2.  **Inicie o Backend (JSON Server):**
+    Abra um terminal separado na pasta `backend` e execute:
+    ```bash
+    npm start
+    ```
+    *(O servidor rodará em `http://localhost:3000` por padrão).*
 
-## Running end-to-end tests
+3.  **Inicie o Frontend:**
+    No terminal da pasta raiz do projeto, execute:
+    ```bash
+    ng serve
+    ```
 
-For end-to-end (e2e) testing, run:
+4.  **Acesse no navegador:**
+    `http://localhost:4200`
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+Desenvolvido durante o curso de Angular (Alura).
