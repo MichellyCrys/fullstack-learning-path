@@ -7,7 +7,7 @@ Este repositório centraliza os projetos que desenvolvi durante minha jornada de
 ## 🖥️ Backend
 
 ### [Jogoteca](./Backend/jogoteca)
-**Curso:** *Flask: crie uma webapp com Python*
+**Curso:** *Flask: crie uma webapp com Python - Alura*
 
 A Jogoteca é uma aplicação web para gerenciamento de uma lista de jogos, onde é possível adicionar novos títulos e realizar login no sistema.
 
@@ -22,7 +22,7 @@ A Jogoteca é uma aplicação web para gerenciamento de uma lista de jogos, onde
 ## 🎨 Frontend
 
 ### [Buscante - Acessibilidade no Angular](./Frontend/angular/acessibilidade-angular/a11y-buscante)
-**Curso:** *Acessibilidade no Angular: aprimorando formulários, modais e rotas*
+**Curso:** *Acessibilidade no Angular: aprimorando formulários, modais e rotas - Alura*
 
 Neste projeto, apliquei técnicas avançadas de acessibilidade (a11y) em uma aplicação de busca de livros utilizando a API do Google Books. O foco foi garantir que a navegação e interação fossem plenamente funcionais para todas as pessoas.
 
@@ -35,8 +35,8 @@ Neste projeto, apliquei técnicas avançadas de acessibilidade (a11y) em uma apl
 * **Identificação Semântica:** Aplicação rigorosa de atributos ARIA para descrições de imagens e componentes interativos.
 
 
-### [Alura - JS Orientação a Objetos](./Frontend/javascript/js-poo)
-**Curso:** *JavaScript: programando a Orientação a Objetos*
+### [JS Orientação a Objetos](./Frontend/javascript/js-poo)
+**Curso:** *JavaScript: programando a Orientação a Objetos - Alura*
 
 Neste curso, dominei o paradigma de programação orientado a objetos aplicado ao JavaScript, essencial para a criação de sistemas modulares e escaláveis.
 
@@ -48,7 +48,7 @@ Neste curso, dominei o paradigma de programação orientado a objetos aplicado a
 * **Encapsulamento:** Implementação de proteção de dados e interfaces limpas.
 
 ### [Angular - Memoteca](./Frontend/angular/memoteca/)
-**Curso:** *Angular 14: aplique os conceitos e desenvolva seu primeiro CRUD*
+**Curso:** *Angular 14: aplique os conceitos e desenvolva seu primeiro CRUD - Alura*
 
 O MemoTeca é um mural de pensamentos virtual. Nele, é possível armazenar citações, trechos de músicas e frases para consultas futuras ou legendas de fotos.
 
@@ -64,7 +64,7 @@ O MemoTeca é um mural de pensamentos virtual. Nele, é possível armazenar cita
 ## 🏗️ DevOps & Infraestrutura
 
 ### [Docker Completo do Zero ao Avançado (Udemy)](./DevOps/docker)
-**Cursor:** *Udemy - DOCKER Completo do Zero ao Avançado*
+**Curso:** *Udemy - DOCKER Completo do Zero ao Avançado*
 
 Neste curso, aprendi a construir, testar e implementar containers do zero ao avançado. Como projeto final, utilizei o **Docker Compose** para orquestrar uma aplicação completa com Backend e Frontend integrados.
 
