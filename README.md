@@ -21,17 +21,7 @@ A Jogoteca é uma aplicação web para gerenciamento de uma lista de jogos, onde
 
 ## 🎨 Frontend
 
-### [Angular - Memoteca](./Frontend/### [JS Orientação a Objetos](./Frontend/javascript/js-poo)
-**Curso:** *JavaScript: programando a Orientação a Objetos*
-
-Neste curso, dominei o paradigma de programação orientado a objetos aplicado ao JavaScript, essencial para a criação de sistemas modulares e escaláveis.
-
-**O que foi desenvolvido/aprendido:**
-* **Paradigma POO:** Domínio do paradigma mais usado no mercado de desenvolvimento.
-* **Referências e Objetos:** Entendimento profundo de como o JavaScript lida com instâncias e memória.
-* **Membros de Classe:** Uso prático de atributos e métodos (tanto de instância quanto estáticos/da classe).
-* **Construtores:** Definição de objetos de forma padronizada através de funções construtoras.
-* **Encapsulamento:** Implementação de proteção de dados e interfaces limpas.angular/memoteca/)
+### [Angular - Memoteca](./Frontend/angular/memoteca/)
 **Curso:** *Angular 14: aplique os conceitos e desenvolva seu primeiro CRUD*
 
 O MemoTeca é um mural de pensamentos virtual. Nele, é possível armazenar citações, trechos de músicas e frases para consultas futuras ou legendas de fotos.
@@ -45,17 +35,7 @@ O MemoTeca é um mural de pensamentos virtual. Nele, é possível armazenar cita
 
 ---
 
-### [JS Orientação a Objetos](./Frontend/javascr### [JS Orientação a Objetos](./Frontend/javascript/js-poo)
-**Curso:** *JavaScript: programando a Orientação a Objetos*
-
-Neste curso, dominei o paradigma de programação orientado a objetos aplicado ao JavaScript, essencial para a criação de sistemas modulares e escaláveis.
-
-**O que foi desenvolvido/aprendido:**
-* **Paradigma POO:** Domínio do paradigma mais usado no mercado de desenvolvimento.
-* **Referências e Objetos:** Entendimento profundo de como o JavaScript lida com instâncias e memória.
-* **Membros de Classe:** Uso prático de atributos e métodos (tanto de instância quanto estáticos/da classe).
-* **Construtores:** Definição de objetos de forma padronizada através de funções construtoras.
-* **Encapsulamento:** Implementação de proteção de dados e interfaces limpas.ipt/js-poo)
+### [JS Orientação a Objetos](./Frontend/javascript/js-poo)
 **Curso:** *JavaScript: programando a Orientação a Objetos*
 
 Neste curso, dominei o paradigma de programação orientado a objetos aplicado ao JavaScript, essencial para a criação de sistemas modulares e escaláveis.
@@ -94,7 +74,7 @@ Neste curso, aprendi a construir, testar e implementar containers do zero ao ava
 * **Linguagens:** Python, TypeScript, JavaScript, HTML, CSS.
 * **Frameworks:** Flask (Python), Angular (v14+).
 * **Estilização:** Bootstrap.
-* **Ferramentas:** Git, GitHub, Angular CLI, Docker & Docker Compose.
+* **Ferramentas:** Git, GitHub, Angular CLI, **Docker & Docker Compose**.
 
 ---
 Desenvolvido por Michelly Crystiane.
