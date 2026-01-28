@@ -21,6 +21,32 @@ A Jogoteca é uma aplicação web para gerenciamento de uma lista de jogos, onde
 
 ## 🎨 Frontend
 
+### [Buscante - Acessibilidade no Angular](./Frontend/angular/acessibilidade-angular/a11y-buscante)
+**Curso:** *Acessibilidade no Angular: aprimorando formulários, modais e rotas*
+
+Neste projeto, apliquei técnicas avançadas de acessibilidade (a11y) em uma aplicação de busca de livros utilizando a API do Google Books. O foco foi garantir que a navegação e interação fossem plenamente funcionais para todas as pessoas.
+
+**O que foi desenvolvido/aprendido:**
+* **Navegação Semântica:** Uso de `RouterLinkActive` e `aria-current` para indicar links ativos, além de títulos dinâmicos para rotas.
+* **Gerenciamento de Foco:** Implementação da diretiva `focusTrap` do módulo `a11yModule` (Angular CDK) para prender o foco dentro de modais abertos.
+* **Formulários Acessíveis:** Integração de atributos como `aria-invalid`, `aria-describedby` e `aria-disabled` para fornecer contexto claro em campos de entrada e botões.
+* **Feedback Auditivo:** Uso do `LiveAnnouncer` para fornecer notificações de voz dinâmicas em resposta a eventos da aplicação.
+* **Manipulação do DOM:** Uso de `Renderer2` e `ElementRef` para controle fino de scroll e foco sem comprometer a segurança ou performance.
+* **Identificação Semântica:** Aplicação rigorosa de atributos ARIA para descrições de imagens e componentes interativos.
+
+
+### [Alura - JS Orientação a Objetos](./Frontend/javascript/js-poo)
+**Curso:** *JavaScript: programando a Orientação a Objetos*
+
+Neste curso, dominei o paradigma de programação orientado a objetos aplicado ao JavaScript, essencial para a criação de sistemas modulares e escaláveis.
+
+**O que foi desenvolvido/aprendido:**
+* **Paradigma POO:** Domínio do paradigma mais usado no mercado de desenvolvimento.
+* **Referências e Objetos:** Entendimento profundo de como o JavaScript lida com instâncias e memória.
+* **Membros de Classe:** Uso prático de atributos e métodos (tanto de instância quanto estáticos/da classe).
+* **Construtores:** Definição de objetos de forma padronizada através de funções construtoras.
+* **Encapsulamento:** Implementação de proteção de dados e interfaces limpas.
+
 ### [Angular - Memoteca](./Frontend/angular/memoteca/)
 **Curso:** *Angular 14: aplique os conceitos e desenvolva seu primeiro CRUD*
 
@@ -34,18 +60,6 @@ O MemoTeca é um mural de pensamentos virtual. Nele, é possível armazenar cita
 * **Integração com API:** Realização de requisições HTTP através da classe `HttpClient` e desenvolvimento de um CRUD completo (Create, Read, Update, Delete).
 
 ---
-
-### [JS Orientação a Objetos](./Frontend/javascript/js-poo)
-**Curso:** *JavaScript: programando a Orientação a Objetos*
-
-Neste curso, dominei o paradigma de programação orientado a objetos aplicado ao JavaScript, essencial para a criação de sistemas modulares e escaláveis.
-
-**O que foi desenvolvido/aprendido:**
-* **Paradigma POO:** Domínio do paradigma mais usado no mercado de desenvolvimento.
-* **Referências e Objetos:** Entendimento profundo de como o JavaScript lida com instâncias e memória.
-* **Membros de Classe:** Uso prático de atributos e métodos (tanto de instância quanto estáticos/da classe).
-* **Construtores:** Definição de objetos de forma padronizada através de funções construtoras.
-* **Encapsulamento:** Implementação de proteção de dados e interfaces limpas.
 
 ## 🏗️ DevOps & Infraestrutura
 
@@ -72,9 +86,10 @@ Neste curso, aprendi a construir, testar e implementar containers do zero ao ava
 ## 🛠️ Tecnologias Utilizadas
 
 * **Linguagens:** Python, TypeScript, JavaScript, HTML, CSS.
-* **Frameworks:** Flask (Python), Angular (v14+).
+* **Frameworks:** Flask (Python), Angular (v14+), Angular CDK (A11y).
+* **Padrões e Práticas:** Acessibilidade Web (WCAG/ARIA), POO, Mobile First.
 * **Estilização:** Bootstrap.
-* **Ferramentas:** Git, GitHub, Angular CLI, **Docker & Docker Compose**.
+* **Ferramentas:** Git, GitHub, Angular CLI, Docker & Docker Compose.
 
 ---
-Desenvolvido por Michelly Crystiane.
+Desenvolvido por **Michelly Crystiane**.
