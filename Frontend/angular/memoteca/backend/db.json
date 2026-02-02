@@ -7,27 +7,15 @@
       "modelo": "modelo1"
     },
     {
+      "id": 2,
+      "conteudo": "Na minha máquina funciona!",
+      "autoria": "Dev da madrugada",
+      "modelo": "modelo2"
+    },
+    {
       "id": "3",
       "conteudo": "Éramos apenas sete, mas agora temos todos vocês",
       "autoria": " We Are Bulletproof: The Eternal",
-      "modelo": "modelo3"
-    },
-    {
-      "id": "bce1",
-      "conteudo": "Aprendendo Angular",
-      "autoria": "Dev",
-      "modelo": "modelo1"
-    },
-    {
-      "id": "2fe9",
-      "conteudo": "Aprendendo Angular",
-      "autoria": "Dev",
-      "modelo": "modelo1"
-    },
-    {
-      "id": "b3e4",
-      "conteudo": "BTS IS COMING",
-      "autoria": "MICHY",
       "modelo": "modelo3"
     }
   ]

@@ -15,7 +15,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class EditarPensamento implements OnInit{
 
   pensamento: InfoPensamento ={
-    id: 0,
+    id: '',
     conteudo: '',
     autoria: '',
     modelo: ''
@@ -29,7 +29,7 @@ export class EditarPensamento implements OnInit{
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.service.buscarPorId(parseInt(id!)).subscribe((pensamento) => {
+    this.service.buscarPorId(id!).subscribe((pensamento) => {
       this.pensamento = pensamento;
     })
   }

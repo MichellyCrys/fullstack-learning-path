@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ExcluirPensamento implements OnInit{
 
   pensamento: InfoPensamento = {
-    id: 0,
+    id: '',
     conteudo: '',
     autoria: '',
     modelo: ''
@@ -24,9 +24,9 @@ export class ExcluirPensamento implements OnInit{
     private route: ActivatedRoute
   ){}
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.service.buscarPorId(parseInt(id!)).subscribe((pensamento) => {
+    this.service.buscarPorId(id!).subscribe((pensamento) => {
       this.pensamento = pensamento;
     })
   }

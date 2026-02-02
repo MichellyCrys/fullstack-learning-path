@@ -13,7 +13,7 @@ import { RouterLink } from "@angular/router";
 export class Pensamento implements OnInit{
 
   @Input() pensamento: InfoPensamento = {
-    id: 0,
+    id: '',
     conteudo: 'I love Angular',
     autoria: 'Michelly',
     modelo:'modelo2'
