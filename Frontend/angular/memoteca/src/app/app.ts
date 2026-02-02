@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Cabecalho } from './componentes/cabecalho/cabecalho';
 import { Rodape } from './componentes/rodape/rodape';
 import { CriarPensamento } from './componentes/pensamentos/criar-pensamento/criar-pensamento';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
     Cabecalho,
     Rodape,
     FormsModule,
+    ReactiveFormsModule
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
