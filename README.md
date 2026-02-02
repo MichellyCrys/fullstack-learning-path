@@ -60,7 +60,7 @@ O MemoTeca é um mural de pensamentos virtual. Nele, é possível armazenar cita
 * **Integração com API:** Realização de requisições HTTP através da classe `HttpClient` e desenvolvimento de um CRUD completo (Create, Read, Update, Delete).
 
 ### [Indexa - Agenda de Contatos](./Frontend/angular/indexa)
-**Curso:** *Angular: construa uma aplicação web com componentes, linguagem de template e CLI*
+**Curso:** *Angular: construa uma aplicação web com componentes, linguagem de template e CLI - Alura*
 
 O Indexa é uma aplicação de agenda de contatos onde pratiquei a organização de dados e o uso de recursos modernos do Angular.
 
