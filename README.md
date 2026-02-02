@@ -59,6 +59,18 @@ O MemoTeca é um mural de pensamentos virtual. Nele, é possível armazenar cita
 * **Diretivas e Rotas:** Uso das principais diretivas do Angular e navegação dinâmica entre componentes.
 * **Integração com API:** Realização de requisições HTTP através da classe `HttpClient` e desenvolvimento de um CRUD completo (Create, Read, Update, Delete).
 
+### [Indexa - Agenda de Contatos](./Frontend/angular/indexa)
+**Curso:** *Angular: construa uma aplicação web com componentes, linguagem de template e CLI*
+
+O Indexa é uma aplicação de agenda de contatos onde pratiquei a organização de dados e o uso de recursos modernos do Angular.
+
+**O que foi desenvolvido/aprendido:**
+* **Componentes Reutilizáveis:** Criação de uma arquitetura modular com componentes independentes.
+* **Modern Control Flow:** Uso da nova linguagem de template do Angular, especificamente a diretiva `@for` para controle de fluxo de dados.
+* **Manipulação de Dados Local:** Implementação de leitura de arquivos **JSON** para carregar informações na interface.
+* **Configurações Técnicas:** Ajustes no `tsconfig.json` para suporte a importações de módulos JSON e otimização do projeto.
+* **Angular CLI & Estilização:** Domínio total da CLI para geração de estrutura e prática avançada de CSS para componentes.
+
 ---
 
 ## 🏗️ DevOps & Infraestrutura
