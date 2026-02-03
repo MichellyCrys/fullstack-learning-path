@@ -2,6 +2,7 @@ import { Component, Input, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InfoPensamento } from './../infoPensamento';
 import { RouterLink } from "@angular/router";
+import { PensamentoService } from '../pensamento.service';
 
 @Component({
   selector: 'app-pensamento',
@@ -16,10 +17,11 @@ export class Pensamento implements OnInit{
     id: '',
     conteudo: 'I love Angular',
     autoria: 'Michelly',
-    modelo:'modelo2'
+    modelo:'modelo2',
+    favorito: false
   }
 
-  constructor(){
+  constructor(private service: PensamentoService){
   }
 
   ngOnInit(): void {
@@ -30,6 +32,18 @@ export class Pensamento implements OnInit{
       return 'pensamento-g';
     }
     return 'pensamento-p';
+  }
+
+  mudarIconeFavorito(): string{
+    if(this.pensamento.favorito == false){
+      return 'inativo'
+    }
+    return 'ativo'
+  }
+
+  atualizarFavoritos(){
+    this.service.mudarFavorito(this.pensamento).subscribe();
+    console.log(this.pensamento.favorito)
   }
 
 }

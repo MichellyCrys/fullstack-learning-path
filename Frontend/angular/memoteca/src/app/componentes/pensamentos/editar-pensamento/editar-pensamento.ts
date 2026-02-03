@@ -36,7 +36,8 @@ export class EditarPensamento implements OnInit{
         Validators.required,
         Validators.minLength(3),
       ])],
-      modelo: ['modelo1']
+      modelo: ['modelo1'],
+      favorito: [false]
     });
 
     const id = this.route.snapshot.paramMap.get('id');
@@ -48,7 +49,7 @@ export class EditarPensamento implements OnInit{
   }
 
   editarPensamento() {
-    this.service.editarPensamento(this.formulario.value).subscribe(() => {
+    this.service.editar(this.formulario.value).subscribe(() => {
       this.router.navigate(['/listarPensamento'])
     })
   }

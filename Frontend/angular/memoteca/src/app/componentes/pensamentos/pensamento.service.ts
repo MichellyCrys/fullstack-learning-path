@@ -30,9 +30,14 @@ export class PensamentoService {
     return this.http.post<InfoPensamento>(this.API, pensamento);
   }
 
-  editarPensamento(pensamento: InfoPensamento): Observable<InfoPensamento>{
+  editar(pensamento: InfoPensamento): Observable<InfoPensamento>{
     const url = `${this.API}/${pensamento.id}`;
     return this.http.put<InfoPensamento>(url, pensamento);
+  }
+
+  mudarFavorito(pensamento: InfoPensamento): Observable<InfoPensamento>{
+    pensamento.favorito = !pensamento.favorito
+    return this.editar(pensamento)
   }
 
   excluir(id: string): Observable<InfoPensamento> {
