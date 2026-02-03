@@ -23,26 +23,30 @@ export class ListarPensamento implements OnInit {
   listaPensamentos: InfoPensamento[] = [];
   paginaAtual: number = 1;
   haMaisPensamentos: boolean = true;
-  readonly LIMITE_POR_PAGINA: number = 6;
+  readonly LIMITE: number = 6;
 
   constructor(private service: PensamentoService, private router: Router) { }
 
   ngOnInit(): void {
     this.service.listar(this.paginaAtual).subscribe((listaPensamentos) => {
       this.listaPensamentos = listaPensamentos;
-      if (listaPensamentos.length < this.LIMITE_POR_PAGINA) {
+      if (listaPensamentos.length < this.LIMITE) {
         this.haMaisPensamentos = false;
       }
-    })
+    });
   }
 
   carregarMaisPensamentos() {
+    if (!this.haMaisPensamentos) return;
+
     this.service.listar(++this.paginaAtual)
-      .subscribe(listaPensamentos => {
-        this.listaPensamentos.push(...listaPensamentos);
-        if (listaPensamentos.length < this.LIMITE_POR_PAGINA) {
+      .subscribe(listaNovosPensamentos => {
+        if (listaNovosPensamentos.length) {
+          this.listaPensamentos.push(...listaNovosPensamentos);
+        }
+        if (listaNovosPensamentos.length < this.LIMITE) {
           this.haMaisPensamentos = false;
         }
-      })
+      });
   }
 }

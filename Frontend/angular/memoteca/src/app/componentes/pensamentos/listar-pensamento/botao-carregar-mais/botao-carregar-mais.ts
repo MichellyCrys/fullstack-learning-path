@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-botao-carregar-mais',
@@ -6,13 +6,11 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './botao-carregar-mais.html',
   styleUrl: './botao-carregar-mais.css',
 })
-export class BotaoCarregarMais implements OnInit{
-
+export class BotaoCarregarMais {
   @Input() haMaisPensamentos: boolean = false;
+  @Output() eventoClick = new EventEmitter<void>();
 
-  constructor(){}
-
-  ngOnInit(): void {
+  onClick() {
+    this.eventoClick.emit();
   }
-
 }
