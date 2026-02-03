@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink, NavigationEnd } from "@angular/router";
 import { Pensamento } from '../pensamento/pensamento';
 import { CommonModule } from '@angular/common';
 import { InfoPensamento } from '../infoPensamento';
@@ -20,10 +20,15 @@ export class ListarPensamento implements OnInit{
 
   listaPensamentos: InfoPensamento[] = [];
 
-  constructor(private service: PensamentoService){}
+  constructor(
+    private service: PensamentoService,
+    private router: Router
+  ){}
 
   ngOnInit(): void {
-    this.service.listar().subscribe((listaPensamentos) =>{
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+
+    this.service.listar().subscribe((listaPensamentos) => {
       this.listaPensamentos = listaPensamentos;
     })
   }
