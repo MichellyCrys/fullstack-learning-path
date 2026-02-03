@@ -47,8 +47,9 @@ Neste curso, dominei o paradigma de programação orientado a objetos aplicado a
 * **Construtores:** Definição de objetos de forma padronizada através de funções construtoras.
 * **Encapsulamento:** Implementação de proteção de dados e interfaces limpas.
 
-### [Memoteca](./Frontend/memoteca)
-**Cursos(Alura):** 1. *Angular 14: aplique os conceitos e desenvolva seu primeiro CRUD*
+### [Angular - Memoteca](./Frontend/angular/memoteca/)
+**Cursos:** 
+1. *Angular 14: aplique os conceitos e desenvolva seu primeiro CRUD*
 2. *Angular 14: evoluindo a aplicação*
 
 O MemoTeca é um mural de pensamentos virtual que evoluiu de um CRUD básico para uma aplicação robusta com filtros e validações avançadas.
@@ -59,7 +60,6 @@ O MemoTeca é um mural de pensamentos virtual que evoluiu de um CRUD básico par
 * **Paginação e Filtros:** Implementação de busca por texto e sistema de "Carregar mais" para performance.
 * **Lógica de Favoritos:** Funcionalidade para favoritar pensamentos e filtrar apenas os preferidos.
 * **Comunicação com API:** Uso avançado do `HttpClient` com parâmetros de busca e ordenação.
-
 ### [Indexa - Agenda de Contatos](./Frontend/angular/indexa)
 **Curso:** *Angular: construa uma aplicação web com componentes, linguagem de template e CLI - Alura*
 
