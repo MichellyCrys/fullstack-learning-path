@@ -26,12 +26,18 @@ export class ListarPensamento implements OnInit {
   paginaAtual: number = 1;
   haMaisPensamentos: boolean = true;
   readonly LIMITE: number = 6;
-  filtro: string = ''
+  filtro: string = '';
+  favoritos: boolean = false;
+  listaFavoritos: InfoPensamento[] = [];
+  titulo: string = 'Meu Mural'
 
-  constructor(private service: PensamentoService, private router: Router) { }
+  constructor(
+    private service: PensamentoService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    this.service.listar(this.paginaAtual, this.filtro).subscribe((listaPensamentos) => {
+    this.service.listar(this.paginaAtual, this.filtro, this.favoritos).subscribe((listaPensamentos) => {
       this.listaPensamentos = listaPensamentos;
       if (listaPensamentos.length < this.LIMITE) {
         this.haMaisPensamentos = false;
@@ -42,7 +48,7 @@ export class ListarPensamento implements OnInit {
   carregarMaisPensamentos() {
     if (!this.haMaisPensamentos) return;
 
-    this.service.listar(++this.paginaAtual, this.filtro)
+    this.service.listar(++this.paginaAtual, this.filtro, this.favoritos)
       .subscribe(listaNovosPensamentos => {
         if (listaNovosPensamentos.length) {
           this.listaPensamentos.push(...listaNovosPensamentos);
@@ -57,9 +63,29 @@ export class ListarPensamento implements OnInit {
     this.haMaisPensamentos = true;
     this.paginaAtual = 1;
 
-    this.service.listar(this.paginaAtual, this.filtro)
+    this.service.listar(this.paginaAtual, this.filtro, this.favoritos)
       .subscribe(listaPensamentos => {
         this.listaPensamentos = listaPensamentos;
       });
+  }
+
+  recarregarComponente(){
+    this.favoritos = false;
+    this.paginaAtual = 1;
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate([this.router.url]);
+  }
+
+  listarFavoritos(){
+    this.titulo = 'Meus favoritos'
+    this.favoritos = true
+    this.haMaisPensamentos = true
+    this.paginaAtual = 1
+    this.service.listar(this.paginaAtual, this.filtro, this.favoritos)
+      .subscribe(listarPensamentosFavoritos=> {
+        this.listaPensamentos = listarPensamentosFavoritos
+        this.listaFavoritos = listarPensamentosFavoritos
+      })
   }
 }

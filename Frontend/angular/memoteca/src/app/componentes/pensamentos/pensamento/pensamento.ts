@@ -21,6 +21,8 @@ export class Pensamento implements OnInit{
     favorito: false
   }
 
+  @Input() listaFavoritos: InfoPensamento[] = [];
+
   constructor(private service: PensamentoService){
   }
 
@@ -42,8 +44,9 @@ export class Pensamento implements OnInit{
   }
 
   atualizarFavoritos(){
-    this.service.mudarFavorito(this.pensamento).subscribe();
-    console.log(this.pensamento.favorito)
+    this.service.mudarFavorito(this.pensamento).subscribe(() => {
+      this.listaFavoritos.splice(this.listaFavoritos.indexOf(this.pensamento), 1)
+    });
   }
 
 }
