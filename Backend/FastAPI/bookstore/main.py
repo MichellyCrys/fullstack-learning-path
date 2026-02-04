@@ -16,9 +16,14 @@ async def home():
 # /list-books -> listar todos os livros
 @app.get("/list-books")
 async def list_books():
-    return {"books": BOOK_DATABASE}
+    return { "books": BOOK_DATABASE }
 
 
-# /list-bools-by-index/{index} -> listar um livro
+# /list-books-by-index/{index} -> listar um livro
+@app.get("/list-books-by-index/{index}")
+async def list_books_by_index(index: int):
+    return { "books": BOOK_DATABASE[index] }
+
+
 # /get-random-book -> livro aleatório
 # /add-book -> adicionar novo livro
