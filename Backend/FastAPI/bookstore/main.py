@@ -35,3 +35,7 @@ async def get_random_book():
     return random.choice(BOOK_DATABASE)
 
 # /add-book -> adicionar novo livro
+@app.post("/add-book")
+async def add_book(book: str):
+    BOOK_DATABASE.append(book)
+    return { "message": f'Book {book} was added' }
