@@ -6,7 +6,18 @@ Este repositório centraliza os projetos que desenvolvi durante minha jornada de
 
 ## 🖥️ Backend
 
-### [Jogoteca](./Backend/Flask/jogoteca)
+## [FastAPI](./Backend/FastAPI/bookstore)
+**Curso** *FastAPI em Python em 1 hora - Iniciante*
+
+Desenvolvimento de uma API para gerenciamento de uma livraria. O projeto serve como base sólida para sistemas de e-commerce, podendo ser adaptado para qualquer tipo de loja (eletrônicos, pizzarias, etc).
+
+**O que foi desenvolvido/aprendido:**
+* **Criação de Endpoints:** Estruturação de rotas para listagem de livros e ações de compra.
+* **Tipagem e Validação:** Uso de *Type Hints* do Python e Pydantic para garantir a integridade dos dados.
+* **Documentação Automática:** Exploração do Swagger UI (`/docs`) e ReDoc (`/redoc`) gerados automaticamente.
+* **Performance:** Introdução ao conceito de APIs assíncronas e alta performance com o FastAPI.
+
+### [Flask - Jogoteca](./Backend/Flask/jogoteca)
 **Curso:** *Flask: crie uma webapp com Python - Alura*
 
 A Jogoteca é uma aplicação web para gerenciamento de uma lista de jogos, onde é possível adicionar novos títulos e realizar login no sistema.
