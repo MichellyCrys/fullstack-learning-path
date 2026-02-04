@@ -101,7 +101,7 @@ Neste curso, aprendi a construir, testar e implementar containers do zero ao ava
 #### 📝 Comandos Úteis Praticados:
 * **Gerenciamento de Containers:** `docker run`, `docker stop`, `docker start`, `docker rm`.
 * **Visualização e Inspeção:** `docker ps -a`, `docker volume inspect`.
-* **Volumes e Portas:** `docker run -d -p 3000:3000 -v nome-volume:/caminho/dados imagem:tag`.
+* **Volumes e Portas:** `docker run -d -p 3000:3000 -v nome-volume:/caminho/dados im* **Ferramentas:** Git, GitHub, Angular CLI, Docker & Docker Compose.agem:tag`.
 * **Docker Compose:** `docker compose up`, `docker compose down`, `docker compose ps`, `docker compose up --build`.
 
 ---
@@ -110,10 +110,10 @@ Neste curso, aprendi a construir, testar e implementar containers do zero ao ava
 ## 🛠️ Tecnologias Utilizadas
 
 * **Linguagens:** Python, TypeScript, JavaScript, HTML, CSS.
-* **Frameworks:** Flask (Python), Angular (v14+), Angular CDK (A11y).
+* **Frameworks/Bibliotecas:** Flask, FastAPI, Angular (v14, v17+), Angular CDK.
 * **Padrões e Práticas:** Acessibilidade Web (WCAG/ARIA), POO, Mobile First.
 * **Estilização:** Bootstrap.
-* **Ferramentas:** Git, GitHub, Angular CLI, Docker & Docker Compose.
+* **Ferramentas:** Git, GitHub, Angular CLI, Docker & Docker Compose, Uvicorn.
 
 ---
 Desenvolvido por **Michelly Crystiane**.
