@@ -6,7 +6,7 @@ Este repositório centraliza os projetos que desenvolvi durante minha jornada de
 
 ## 🖥️ Backend
 
-### [Jogoteca](./Backend/jogoteca)
+### [Jogoteca](./Backend/Flask/jogoteca)
 **Curso:** *Flask: crie uma webapp com Python - Alura*
 
 A Jogoteca é uma aplicação web para gerenciamento de uma lista de jogos, onde é possível adicionar novos títulos e realizar login no sistema.
