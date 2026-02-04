@@ -1,13 +1,21 @@
+import json
+import os
 from fastapi import FastAPI, HTTPException
 import random
 
 app = FastAPI()
+
+BOOKS_FILE = "books.json"
 
 BOOK_DATABASE = [
     "Harry Potter and the Chamber of Secrets",
     "Lord of the Rings",
     "The da Vinci Code"
 ]
+
+if os.path.exists(BOOKS_FILE):
+    with open (BOOKS_FILE, "r") as f:
+        BOOK_DATABASE = json.load(f)
 
 
 # /           -> boas vindas
@@ -38,4 +46,6 @@ async def get_random_book():
 @app.post("/add-book")
 async def add_book(book: str):
     BOOK_DATABASE.append(book)
+    with open (BOOKS_FILE, "w") as f:
+        json.dump(BOOK_DATABASE, f)
     return { "message": f'Book {book} was added' }
