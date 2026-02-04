@@ -1,6 +1,6 @@
 # 📚 Meus Cursos e Projetos (Alura, Udemy)
 
-Este repositório centraliza os projetos que desenvolvi durante minha jornada de aprendizado em Backend, Frontend e DevOps, focando em tecnologias como Python (Flask), Angular e Docker.
+Este repositório centraliza os projetos que desenvolvi durante minha jornada de aprendizado em Backend, Frontend e DevOps, focando em tecnologias como Python (Flask/FastAPI), Angular e Docker.
 
 ---
 
