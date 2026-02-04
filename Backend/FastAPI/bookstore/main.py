@@ -1,4 +1,5 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+import random
 
 app = FastAPI()
 
@@ -22,8 +23,15 @@ async def list_books():
 # /list-books-by-index/{index} -> listar um livro
 @app.get("/list-books-by-index/{index}")
 async def list_books_by_index(index: int):
-    return { "books": BOOK_DATABASE[index] }
+    if index < 0 or index >= len(BOOK_DATABASE):
+        raise HTTPException(404, "Index out of range")
+    else:
+        return { "books": BOOK_DATABASE[index] }
 
 
 # /get-random-book -> livro aleatório
+@app.get("/get-random-book")
+async def get_random_book():
+    return random.choice(BOOK_DATABASE)
+
 # /add-book -> adicionar novo livro
