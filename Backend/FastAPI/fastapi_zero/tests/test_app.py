@@ -12,9 +12,18 @@ def test_root_deve_retornar_ok_e_ola_mundo():
     - A: Act     - Executa a coisa (o SUT)
     - A: Assert  - Garanta que A é A
     """
-    client = TestClient(app) # Arrange
+    client = TestClient(app)  # Arrange
 
-    response = client.get('/') # Act
+    response = client.get('/')  # Act
 
     assert response.json() == {'message': 'Olá Mundo!'}
     assert response.status_code == HTTPStatus.OK
+
+
+def test_exercicio_ola_mundo_em_html():
+    client = TestClient(app)
+
+    response = client.get('/exercicio-html')
+
+    assert response.status_code == HTTPStatus.OK
+    assert '<h1> Olá Mundo </h1>' in response.text
