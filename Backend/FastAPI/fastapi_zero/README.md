@@ -23,6 +23,7 @@ Este projeto está sendo desenvolvido durante o curso **FastAPI do Zero (Ediçã
 - [x] **Aula 01:** Configuração de ambiente e "Hello World" com testes automatizados.
 - [x] **Aula 02:** Fundamentos do desenvolvimento web e funcionamento do FastAPI.
 - [x] **Aula 03:** Implementação completa das operações **CRUD** básicas.
+- [x] **Aula 04:** Integração com **Banco de Dados (SQLAlchemy)** e gerenciamento de **Migrações (Alembic)**.
 - [ ] **Aulas Futuras:** Integração com banco de dados real, Autenticação JWT, Programação Assíncrona, Docker e CI/CD.
 
 ---
