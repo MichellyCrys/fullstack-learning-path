@@ -17,6 +17,12 @@ Desenvolvimento de uma API para gerenciamento de uma livraria. O projeto serve c
 * **Documentação Automática:** Exploração do Swagger UI (`/docs`) e ReDoc (`/redoc`) gerados automaticamente.
 * **Performance:** Introdução ao conceito de APIs assíncronas e alta performance com o FastAPI.
 
+### [FastAPI do Zero (Em andamento)](./Backend/FastAPI/fastapi_zero/)
+**Curso:** *FastAPI do Zero 2025 (Dunossauro)*
+
+Construção de um gerenciador de tarefas robusto com foco em **TDD (Test-Driven Development)** e ferramentas de ponta do ecossistema Python.
+* **Destaques:** Aplicação de TDD desde o primeiro dia, uso de Pydantic v2, e arquitetura focada em manutenibilidade e produção.
+
 ### [Flask - Jogoteca](./Backend/Flask/jogoteca)
 **Curso:** *Flask: crie uma webapp com Python - Alura*
 
