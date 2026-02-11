@@ -79,13 +79,6 @@ def test_update_user_should_return_not_found__exercicio(client):
     assert response.json() == {'detail': 'User not found'}
 
 
-def test_delete_user_should_return_not_found__exercicio(client):
-    response = client.delete('/users/777')
-
-    assert response.status_code == HTTPStatus.NOT_FOUND
-    assert response.json() == {'detail': 'User not found'}
-
-
 def test_update_integrity_error(client, user):
     client.post(
         '/users',
@@ -107,3 +100,55 @@ def test_update_integrity_error(client, user):
 
     assert response.status_code == HTTPStatus.CONFLICT
     assert response.json() == {'detail': 'Username or Email already exists'}
+
+
+# Resolução de Exercícios
+def test_create_user_should_username_exists__exercicio(client, user):
+    response = client.post(
+        '/users/',
+        json={
+            'username': user.username,
+            'email': 'alice@example.com',
+            'password': 'secret',
+        },
+    )
+    assert response.status_code == HTTPStatus.CONFLICT
+    assert response.json() == {'detail': 'Username already exists'}
+
+
+def test_create_user_should_return_409_email_exists__exercicio(client, user):
+    response = client.post(
+        '/users/',
+        json={
+            'username': 'alice',
+            'email': user.email,
+            'password': 'secret',
+        },
+    )
+    assert response.status_code == HTTPStatus.CONFLICT
+    assert response.json() == {'detail': 'Email already exists'}
+
+
+def test_delete_user_should_return_not_found_exercicio(client):
+    response = client.delete('/users/777')
+
+    assert response.status_code == HTTPStatus.NOT_FOUND
+    assert response.json() == {'detail': 'User not found'}
+
+
+def test_get_user_should_return_not_found__exercicio(client):
+    response = client.get('/users/666')
+
+    assert response.status_code == HTTPStatus.NOT_FOUND
+    assert response.json() == {'detail': 'User not found'}
+
+
+def test_get_user___exercicio(client, user):
+    response = client.get(f'/users/{user.id}')
+
+    assert response.status_code == HTTPStatus.OK
+    assert response.json() == {
+        'username': user.username,
+        'email': user.email,
+        'id': user.id,
+    }
