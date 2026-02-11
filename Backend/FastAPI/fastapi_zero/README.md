@@ -30,7 +30,20 @@ Este projeto está sendo desenvolvido durante o curso **FastAPI do Zero (Ediçã
 - [x] **Aula 02:** Fundamentos do desenvolvimento web e funcionamento do FastAPI.
 - [x] **Aula 03:** Implementação completa das operações **CRUD** básicas.
 - [x] **Aula 04:** Integração com **Banco de Dados (SQLAlchemy)** e gerenciamento de **Migrações (Alembic)**.
-- [ ] **Aulas Futuras:** Integração com banco de dados real, Autenticação JWT, Programação Assíncrona, Docker e CI/CD.
+- [x] **Aula 05:** Integração do **SQLAlchemy** e Testes com **Fixtures**.
+- [ ] **Aula 06:** Próximo passo: Autenticação e Segurança (JWT).
+
+---
+
+## 🛠️ Evolução Técnica(Aula 05)
+
+Nesta etapa, a aplicação deixou de usar dados em memória para utilizar uma persistência real. Os principais pontos implementados foram:
+
+* **Injeção de Dependência:** Uso do `Depends` do FastAPI para gerenciar sessões do banco de dados de forma eficiente.
+* **Refatoração do CRUD:** Atualização de todos os endpoints (`POST`, `GET`, `PUT`, `DELETE`) para interagir com o SQLAlchemy.
+* **Fixtures no Pytest:** Criação de fixtures avançadas para automatizar a criação de usuários de teste e limpeza do banco, garantindo testes isolados e rápidos.
+* **Tratamento de Conflitos:** Implementação de regras de negócio para evitar duplicidade de usuários (status code 409).
+* **Schema integration:** Conexão refinada entre modelos do SQLAlchemy e schemas do Pydantic.
 
 ---
 

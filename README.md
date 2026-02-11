@@ -9,8 +9,8 @@ Este repositório centraliza os projetos que desenvolvi durante minha jornada de
 ### [FastAPI do Zero (Em andamento)](./Backend/FastAPI/fastapi_zero/)
 **Curso:** *FastAPI do Zero 2025 (Dunossauro)*
 
-Construção de um gerenciador de tarefas robusto seguindo as melhores práticas de mercado e foco total em qualidade.
-* **Destaques:** Desenvolvimento orientado a testes (TDD) com Pytest, modelagem de dados com **SQLAlchemy**, gerenciamento de migrações com **Alembic** e automação de tarefas com **Taskipy**.
+Construção de um gerenciador de tarefas robusto seguindo as melhores práticas de mercado.
+* **Destaques:** Desenvolvimento orientado a testes (TDD), **persistência real com SQLAlchemy**, gerenciamento de migrações com Alembic e **infraestrutura de testes automatizados com fixtures**.
 
 ### [Bookstore API](./Backend/FastAPI/bookstore)
 **Curso:** *FastAPI em Python em 1 hora - Iniciante*
