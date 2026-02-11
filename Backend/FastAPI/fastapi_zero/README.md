@@ -1,5 +1,11 @@
 # 🚀 FastAPI do Zero
 
+![Python Version](https://img.shields.io/badge/python-3.13%2B-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.115%2B-05998b?logo=fastapi)
+![Poetry](https://img.shields.io/badge/Packaging-Poetry-blue?logo=poetry)
+![Ruff](https://img.shields.io/badge/Linter-Ruff-orange)
+![TDD](https://img.shields.io/badge/Tests-Pytest-yellow?logo=pytest)
+
 Este projeto está sendo desenvolvido durante o curso **FastAPI do Zero (Edição 2025)**, ministrado pelo Dunossauro. O foco principal é aprender a construir APIs robustas, testáveis e performáticas seguindo as melhores práticas do mercado.
 
 ---
@@ -101,7 +107,7 @@ Após a instalação, as ferramentas são configuradas individualmente no arquiv
 ### Ruff
 Para configurar o ruff montamos a configuração em 3 tabelas distintas no arquivo `pyproject.toml.` Uma para as configurações globais, uma para o linter e uma para o formatador.
 
-#### Coniguração Global
+#### Configuração Global
 Na configuração global, definimos o comprimento de linha para **79 caracteres** (conforme PEP-8) e ignoramos a pasta `migrations` (pois o código gerado automaticamente pelo Alembic não deve ser alterado manualmente).
 
 Atualizando o arquivo: `pyproject.toml`
