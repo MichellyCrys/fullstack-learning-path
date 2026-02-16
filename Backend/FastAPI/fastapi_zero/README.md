@@ -31,8 +31,8 @@ Este projeto está sendo desenvolvido durante o curso **FastAPI do Zero (Ediçã
 - [x] **Aula 03:** Implementação completa das operações **CRUD** básicas.
 - [x] **Aula 04:** Integração com **Banco de Dados (SQLAlchemy)** e gerenciamento de **Migrações (Alembic)**.
 - [x] **Aula 05:** Integração do **SQLAlchemy** e Testes com **Fixtures**.
-- [x] **Aula 06:** Sistema de **Autenticação e Autorização** com **JWT**.
-[ ] **Aula 07:** Próximo passo: Refatorando a estrutura.
+- [x] **Aula 07:** **Refatoração, Routers e Annotated.**
+- [ ] **Aula 08:** Próximo passo: Tornando o projeto assíncrono (asyncIO)
 
 ---
 
@@ -52,6 +52,12 @@ Nesta etapa (Aulas 05 e 06), a aplicação deixou de ser um protótipo em memór
 * **Fluxo de Login:** Desenvolvimento do endpoint `/token` para autenticação de credenciais.
 * **Proteção de Endpoints:** Implementação de lógica de autorização onde usuários autenticados só podem modificar ou deletar os seus próprios dados.
 * **Testes de Segurança:** Cobertura de testes específica para validar tokens inválidos, expirados e restrições de acesso a recursos.
+
+### 🏗️ Refatoração e Arquitetura (Aula 07)
+* **Modularização (Routers):** Divisão da lógica em múltiplos ficheiros (`users.py`, `auth.py`) para facilitar a manutenção.
+* **12-Factor App:** Migração de constantes sensíveis para variáveis de ambiente (`.env`) usando a classe `Settings`.
+* **Annotated:** Adoção do padrão `Annotated` para injeção de dependências, seguindo as recomendações mais recentes do FastAPI.
+
 ---
 
 ## ⚙️ Configuração do Ambiente
@@ -166,11 +172,13 @@ Durante a análise estática do código, queremos buscar por coisas específicas
 * **`PL` (Pylint):**: Como o `F`, também procura por erros em relação a boas práticas de código
 * **`PT` (flake8-pytest):**: Checagem de boas práticas do Pytest
 
+Adicionamos a regra **`FAST`** para garantir que o código siga as melhores práticas específicas do framework FastAPI.
+
 Atualizando o arquivo: `pyproject.toml`
 ```bash
 [tool.ruff.lint]
 preview = true
-select = ['I', 'F', 'E', 'W', 'PL', 'PT']
+select = ['I', 'F', 'E', 'W', 'PL', 'PT', 'FAST']
 ```
 
 #### Formatter
@@ -216,14 +224,16 @@ post_test = 'coverage html'
 ## 🚀 Como Executar o Projeto
 Com o ambiente configurado, não é necessário decorar comandos longos. Basta ativar o ambiente virtual e usar as `tasks`:
 
-1. **Ativar o ambiente**: `poetry shell`
-2. **Rodar o servidor**: `task run`
-3. **Rodar os testes**: `task test`
+1. **Instale as dependências:**: `poetry install`
+2. **Configure o arquivo** `.env`: Crie um arquivo `.env` baseado no `.env.example`.
+3. **Ativar o ambiente**: `poetry shell`
+4. **Rodar o servidor**: `task run`
+5. **Rodar os testes**: `task test`
 
 | Comando| O que faz|
 | :--- | :--- |
 | `task lint` | Verifica erros e boas práticas no código. |
-| `task format` | Padroniza o estilo do código (PEP-8). |
+| `task format` | Padronização automática do estilo do código (PEP-8). |
 | `task run` | Inicia o servidor FastAPI em modo de desenvolvimento. |
 | `task test` | Executa a suíte de testes completa.|
 
