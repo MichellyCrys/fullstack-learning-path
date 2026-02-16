@@ -14,8 +14,5 @@ Agradecimento especial aos criadores das ferramentas que tornam o desenvolviment
 * **Ruff:** Astral.sh.
 * **Angular:** Equipe do Google.
 
-## 📜 Licença
-Este projeto está sob a licença **MIT**. Sinta-se à vontade para usar os códigos para estudo, desde que mantenha os créditos originais.
-
 ---
 🚀 Desenvolvido com dedicação por **Michelly Crystiane**.
