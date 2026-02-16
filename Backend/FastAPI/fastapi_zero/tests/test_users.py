@@ -3,6 +3,7 @@ from http import HTTPStatus
 from fastapi_zero.schemas import UserPublic
 
 
+# --- Testes de Criação ---
 def test_create_user(client):
 
     response = client.post(
@@ -21,6 +22,27 @@ def test_create_user(client):
     }
 
 
+def test_create_user_should_username_exists(client, user):
+    response = client.post(
+        '/users/',
+        json={
+            'username': user.username,
+            'email': 'a@a.com',
+            'password': '123',
+        },
+    )
+    assert response.status_code == HTTPStatus.CONFLICT
+
+
+def test_create_user_should_email_exists(client, user):
+    response = client.post(
+        '/users/',
+        json={'username': 'alice', 'email': user.email, 'password': '123'},
+    )
+    assert response.status_code == HTTPStatus.CONFLICT
+
+
+# --- Testes de Leitura ---
 def test_read_users(client, user, token):
     user_schema = UserPublic.model_validate(user).model_dump()
     response = client.get(
@@ -29,6 +51,18 @@ def test_read_users(client, user, token):
     assert response.json() == {'users': [user_schema]}
 
 
+def test_get_user(client, user):
+    response = client.get(f'/users/{user.id}')
+    assert response.status_code == HTTPStatus.OK
+    assert response.json()['username'] == user.username
+
+
+def test_get_user_not_found(client):
+    response = client.get('/users/666')
+    assert response.status_code == HTTPStatus.NOT_FOUND
+
+
+# --- Testes de Update/Delete ---
 def test_update_user(client, user, token):
     response = client.put(
         '/users/1',
@@ -45,6 +79,19 @@ def test_update_user(client, user, token):
         'email': 'bob@example.com',
         'id': 1,
     }
+
+
+def test_update_integrity_error(client, user, token):
+    client.post(
+        '/users/',
+        json={'username': 'fausto', 'email': 'f@f.com', 'password': '123'},
+    )
+    response = client.put(
+        f'/users/{user.id}',
+        headers={'Authorization': f'Bearer {token}'},
+        json={'username': 'fausto', 'email': 'novo@e.com', 'password': '123'},
+    )
+    assert response.status_code == HTTPStatus.CONFLICT
 
 
 def test_delete_user(client, user, token):

@@ -114,7 +114,7 @@ def delete_user(
 
 # Resolução de Exercícios
 @router.get('/{user_id}', response_model=UserPublic)
-def read_user__exercicio(user_id: int, session: Session):
+def read_user(user_id: int, session: Session):
     db_user = session.scalar(select(User).where(User.id == user_id))
 
     if not db_user:
