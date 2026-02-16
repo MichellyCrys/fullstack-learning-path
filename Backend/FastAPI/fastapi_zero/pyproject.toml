@@ -44,7 +44,7 @@ quote-style = 'single'
 
 [tool.pytest.ini_options]
 pythonpath = "."
-addopts = '-p no:warnings'
+addopts = "-p no:warnings --disable-warnings"
 
 
 [tool.taskipy.tasks]
@@ -53,5 +53,5 @@ pre_format = 'ruff check --fix'
 format = 'ruff format'
 run = 'fastapi dev fastapi_zero/app.py'
 pre_test = 'task lint'
-test = 'pytest -s -x --cov=fastapi_zero -vv'
+test = 'pytest -v -x --cov=fastapi_zero'
 post_test = 'coverage html'

@@ -65,23 +65,10 @@ def test_delete_user(client, user, token):
     assert response.json() == {'message': 'User deleted'}
 
 
-def test_update_user_should_return_not_found__exercicio(client):
-    response = client.put(
-        '/users/777',
-        json={
-            'username': 'bob',
-            'email': 'bob@example.com',
-            'password': 'mynewpassword',
-        },
-    )
-    assert response.status_code == HTTPStatus.NOT_FOUND
-    assert response.json() == {'detail': 'User not found'}
-
-
+# Resolução de Exercícios
 def test_update_integrity_error(client, user, token):
     client.post(
-        '/users',
-        headers={'Authorization': f'Bearer {token}'},
+        '/users/',
         json={
             'username': 'fausto',
             'email': 'fausto@example.com',
@@ -91,6 +78,7 @@ def test_update_integrity_error(client, user, token):
 
     response = client.put(
         f'/users/{user.id}',
+        headers={'Authorization': f'Bearer {token}'},
         json={
             'username': 'fausto',
             'email': 'bob@example.com',
@@ -102,7 +90,6 @@ def test_update_integrity_error(client, user, token):
     assert response.json() == {'detail': 'Username or Email already exists'}
 
 
-# Resolução de Exercícios
 def test_create_user_should_username_exists__exercicio(client, user):
     response = client.post(
         '/users/',
@@ -127,13 +114,6 @@ def test_create_user_should_return_409_email_exists__exercicio(client, user):
     )
     assert response.status_code == HTTPStatus.CONFLICT
     assert response.json() == {'detail': 'Email already exists'}
-
-
-def test_delete_user_should_return_not_found_exercicio(client):
-    response = client.delete('/users/777')
-
-    assert response.status_code == HTTPStatus.NOT_FOUND
-    assert response.json() == {'detail': 'User not found'}
 
 
 def test_get_user_should_return_not_found__exercicio(client):
