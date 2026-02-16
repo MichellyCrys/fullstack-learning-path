@@ -31,20 +31,27 @@ Este projeto está sendo desenvolvido durante o curso **FastAPI do Zero (Ediçã
 - [x] **Aula 03:** Implementação completa das operações **CRUD** básicas.
 - [x] **Aula 04:** Integração com **Banco de Dados (SQLAlchemy)** e gerenciamento de **Migrações (Alembic)**.
 - [x] **Aula 05:** Integração do **SQLAlchemy** e Testes com **Fixtures**.
-- [ ] **Aula 06:** Próximo passo: Autenticação e Segurança (JWT).
+- [x] **Aula 06:** Sistema de **Autenticação e Autorização** com **JWT**.
+[ ] **Aula 07:** Próximo passo: Refatorando a estrutura.
 
 ---
 
-## 🛠️ Evolução Técnica(Aula 05)
+## 🛠️ Evolução Técnica e Segurança
 
-Nesta etapa, a aplicação deixou de usar dados em memória para utilizar uma persistência real. Os principais pontos implementados foram:
+Nesta etapa (Aulas 05 e 06), a aplicação deixou de ser um protótipo em memória para se tornar uma API persistente e segura, seguindo padrões de nível de produção.
 
-* **Injeção de Dependência:** Uso do `Depends` do FastAPI para gerenciar sessões do banco de dados de forma eficiente.
-* **Refatoração do CRUD:** Atualização de todos os endpoints (`POST`, `GET`, `PUT`, `DELETE`) para interagir com o SQLAlchemy.
-* **Fixtures no Pytest:** Criação de fixtures avançadas para automatizar a criação de usuários de teste e limpeza do banco, garantindo testes isolados e rápidos.
-* **Tratamento de Conflitos:** Implementação de regras de negócio para evitar duplicidade de usuários (status code 409).
-* **Schema integration:** Conexão refinada entre modelos do SQLAlchemy e schemas do Pydantic.
+### 🗄️ Aula 05: Persistência Real
+* **Integração SQLAlchemy:** Migração total do CRUD para utilizar o ORM SQLAlchemy, permitindo a persistência real dos dados.
+* **Injeção de Dependência:** Uso do `Depends` do FastAPI para gerenciar sessões do banco de dados de forma eficiente e limpa.
+* **Fixtures Avançadas:** Implementação de fixtures no Pytest para automatizar a criação de cenários de teste (usuários, banco limpo), garantindo testes rápidos e isolados.
+* **Tratamento de Exceções:** Implementação de lógica para tratar conflitos de dados (ex: e-mails duplicados) com o Status Code 409.
 
+### 🔐 Aula 06: Autenticação e Autorização
+* **Segurança de Senhas:** Implementação de hashing seguro com o algoritmo **Argon2** (via `pwdlib`), eliminando o armazenamento de senhas em texto puro.
+* **Tokens JWT (JSON Web Token):** Criação de um sistema de tokens de acesso (RFC 7519) com tempo de expiração e assinatura digital.
+* **Fluxo de Login:** Desenvolvimento do endpoint `/token` para autenticação de credenciais.
+* **Proteção de Endpoints:** Implementação de lógica de autorização onde usuários autenticados só podem modificar ou deletar os seus próprios dados.
+* **Testes de Segurança:** Cobertura de testes específica para validar tokens inválidos, expirados e restrições de acesso a recursos.
 ---
 
 ## ⚙️ Configuração do Ambiente
@@ -85,12 +92,13 @@ poetry env use 3.13
 ```
 
 ## 📦 Gerenciamento de Dependências
+O projeto utiliza o Poetry para um gerenciamento preciso de pacotes, separando o que é essencial para o funcionamento da API do que é necessário apenas durante o desenvolvimento.
 
-### 1. Instalando o FastAPI
-Com a base pronta, instalamos o FastAPI utilizando o bundle standard e habilitamos o ambiente virtual:
+### 1. Dependências de Produção
+Além do core do FastAPI, instalamos as bibliotecas necessárias para a persistência de dados e segurança (hashing e tokens):
 
 ```bash
-# Instalação
+# Instalação do Framework e ferramentas padrão
 poetry install 
 poetry add 'fastapi[standard]' 
 
@@ -99,6 +107,12 @@ poetry shell
 
 # Iniciando o servidor de desenvolvimento
 fastapi dev fast_zero/app.py
+
+# Banco de Dados (ORM e Migrações)
+poetry add sqlalchemy alembic
+
+# Segurança e Autenticação (Aula 06)
+poetry add pyjwt "pwdlib[argon2]"
 ```
 
 ### 2. Instalando Ferramentas de Desenvolvimento
@@ -112,6 +126,18 @@ As ferramentas abaixo foram selecionadas por sua utilidade no desenvolvimento e 
 
 ```bash
 poetry add --group dev pytest pytest-cov taskipy ruff
+```
+
+### 3. Sincronização do Ambiente
+Caso você esteja baixando este projeto agora, utilize o comando abaixo para instalar todas as dependências (produção e dev) de uma vez e habilitar o ambiente virtual:
+
+```bash
+# Instala tudo o que está no arquivo lock
+poetry install
+
+# Habilita o ambiente virtual
+poetry shell
+
 ```
 
 ## 🔧 Configuração das Ferramentas (pyproject.toml)
