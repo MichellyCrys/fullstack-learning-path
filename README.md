@@ -1,5 +1,10 @@
 # 📚 Meus Cursos e Projetos (Alura, Udemy, Dunossauro)
 
+![Python Version](https://img.shields.io/badge/python-3.13%2B-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.115%2B-05998b?logo=fastapi)
+![Angular](https://img.shields.io/badge/Angular-v14--v18-dd0031?logo=angular)
+![Docker](https://img.shields.io/badge/Docker-Pro-2496ed?logo=docker)
+
 Este repositório centraliza os projetos que desenvolvi durante minha jornada de aprendizado em **Backend, Frontend e DevOps**, focando em tecnologias como Python (Flask/FastAPI), Angular e Docker.
 
 ---
@@ -9,8 +14,8 @@ Este repositório centraliza os projetos que desenvolvi durante minha jornada de
 ### [FastAPI do Zero (Em andamento)](./Backend/FastAPI/fastapi_zero/)
 **Curso:** *FastAPI do Zero 2025 (Dunossauro)*
 
-Construção de um gerenciador de tarefas robusto seguindo as melhores práticas de mercado.
-* **Destaques:** Desenvolvimento orientado a testes (TDD), **persistência real com SQLAlchemy**, gerenciamento de migrações com Alembic e **infraestrutura de testes automatizados com fixtures**.
+Construção de um gerenciador de tarefas robusto com foco em **TDD**, **Arquitetura Modular** e segurança.
+* **Destaques:** Uso de **APIRouter** para escalabilidade, injeção de dependência com **Annotated**, gestão de configurações via **Pydantic-Settings** (.env) e testes automatizados com **Pytest**.
 
 ### [Bookstore API](./Backend/FastAPI/bookstore)
 **Curso:** *FastAPI em Python em 1 hora - Iniciante*
