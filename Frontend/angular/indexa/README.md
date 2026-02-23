@@ -1,6 +1,11 @@
 # 📇 Indexa - Agenda de Contatos
 
-O **Indexa** é uma aplicação de agenda de contactos desenvolvida em Angular. O projeto foca-se na construção de interfaces modulares e na utilização de recursos modernos da linguagem de template do framework para a exibição dinâmica de dados.
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=flat&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white)
+![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white)
+
+O **Indexa** é uma aplicação de agenda de contatos desenvolvida em **Angular**. O projeto foca na construção de interfaces modulares e na utilização de recursos modernos da linguagem de template do framework para a exibição dinâmica de dados.
 
 ---
 
@@ -8,12 +13,12 @@ O **Indexa** é uma aplicação de agenda de contactos desenvolvida em Angular. 
 
 Neste projeto, foram exploradas as seguintes capacidades do Angular:
 
-* **Componentes Reutilizáveis:** Organização da aplicação em componentes independentes e modulares, como `Cabecalho`, `Container`, `Contato` e `Separador`, facilitando a manutenção e o reaproveitamento de código.
-* **Fluxo de Controlo Moderno (@for):** Utilização da nova sintaxe de template do Angular para iterar sobre a lista de contactos de forma mais performática e legível.
-* **Manipulação de Dados Local (JSON):** Implementação da leitura direta de ficheiros JSON (`agenda.json`) para alimentar a interface com informações de contactos.
-* **Configuração de Módulos:** Ajuste de configurações no ficheiro `tsconfig.json` (`resolveJsonModule` e `esModuleInterop`) para permitir a importação nativa de ficheiros de dados.
-* **Angular CLI:** Uso extensivo da interface de linha de comando para geração de estrutura, build e execução do projeto.
-* **Estilização Avançada:** Prática de CSS focado em componentes para garantir que o layout da agenda seja responsivo e visualmente organizado.
+* **Componentes Reutilizáveis:** Organização da aplicação em componentes independentes e modulares (`Cabecalho`, `Container`, `Contato` e `Separador`).
+* **Fluxo de Controle Moderno (@for):** Utilização da nova sintaxe de template do Angular (v17+) para iterar sobre a lista de contatos com maior performance.
+* **Manipulação de Dados Local (JSON):** Implementação da leitura de arquivos JSON para alimentar a interface.
+* **Configuração Técnica:** Ajuste no `tsconfig.json` (`resolveJsonModule`) para permitir a importação nativa de dados estáticos.
+* **Angular CLI:** Uso da CLI para geração de estrutura, build e execução do projeto.
+* **Estilização Componentizada:** Prática de CSS focado em componentes para garantir um layout responsivo e organizado.
 
 ---
 
@@ -22,13 +27,13 @@ Neste projeto, foram exploradas as seguintes capacidades do Angular:
 * **Framework:** Angular (v17+).
 * **Linguagem:** TypeScript.
 * **Estilização:** CSS3.
-* **Dados:** Ficheiro JSON local.
+* **Dados:** Arquivo JSON local.
 
 ---
 
 ## 💻 Como Executar o Projeto
 
-Este projeto requer o **Node.js** e o **Angular CLI** instalados globalmente.
+Este projeto requer o **Node.js** e o **Angular CLI** instalados.
 
 1.  **Instale as dependências:**
     ```bash
@@ -40,8 +45,8 @@ Este projeto requer o **Node.js** e o **Angular CLI** instalados globalmente.
     ng serve
     ```
 
-3.  **Aceda no navegador:**
-    Abra `http://localhost:4200` para visualizar a aplicação em execução.
+3.  **Acesse no navegador:**
+    Abra `http://localhost:4200` para visualizar a aplicação.
 
 ---
-Desenvolvido durante o curso "Angular: construa uma aplicação web com componentes, linguagem de template e CLI" (Alura).
+> *Desenvolvido durante o curso "Angular: construa uma aplicação web com componentes, linguagem de template e CLI" (Alura).*
