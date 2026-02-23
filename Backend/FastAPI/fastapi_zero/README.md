@@ -32,7 +32,8 @@ Este projeto está sendo desenvolvido durante o curso **FastAPI do Zero (Ediçã
 - [x] **Aula 04:** Integração com **Banco de Dados (SQLAlchemy)** e gerenciamento de **Migrações (Alembic)**.
 - [x] **Aula 05:** Integração do **SQLAlchemy** e Testes com **Fixtures**.
 - [x] **Aula 07:** **Refatoração, Routers e Annotated.**
-- [ ] **Aula 08:** Próximo passo: Tornando o projeto assíncrono (asyncIO)
+- [x] **Aula 08:** **Programação Assíncrona com AsyncIO e SQLAlchemy.**
+- [ ] **Aula 09:** Próximo passo: Tornando o sistema de autenticação robusto.
 
 ---
 
@@ -57,6 +58,15 @@ Nesta etapa (Aulas 05 e 06), a aplicação deixou de ser um protótipo em memór
 * **Modularização (Routers):** Divisão da lógica em múltiplos ficheiros (`users.py`, `auth.py`) para facilitar a manutenção.
 * **12-Factor App:** Migração de constantes sensíveis para variáveis de ambiente (`.env`) usando a classe `Settings`.
 * **Annotated:** Adoção do padrão `Annotated` para injeção de dependências, seguindo as recomendações mais recentes do FastAPI.
+
+### ⚡ Aula 08: O Poder do Asincronismo
+Nesta etapa, transformamos a aplicação em uma API **não bloqueante**:
+
+* **SQLAlchemy Assíncrono:** Migração da Engine e das Sessões para `AsyncSession`, utilizando o driver `aiosqlite` para operações de I/O não bloqueantes.
+* **Endpoints `async def`:** Todos os controladores foram convertidos para corrotinas, permitindo que o loop de eventos processe outras tarefas enquanto aguarda o banco de dados.
+* **Infraestrutura de Testes:** Integração do `pytest-asyncio` e reformulação das fixtures para suportar contextos assíncronos (`AsyncClient` e `AsyncSession`).
+* **Migrações Assíncronas:** Ajuste no `env.py` do Alembic para suportar a nova engine de conexão assíncrona.
+* **Cobertura de Código:** Configuração do Coverage para lidar com concorrência (`greenlet`), garantindo métricas reais de teste.
 
 ---
 
