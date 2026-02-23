@@ -1,6 +1,11 @@
 # ☕ JavaScript: Programando a Orientação a Objetos
 
-Este projeto foi desenvolvido como parte dos meus estudos sobre o paradigma de **Orientação a Objetos (OO)** no JavaScript. O foco principal foi entender como estruturar aplicações modulares, reutilizáveis e seguras através de classes, métodos e encapsulamento.
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
+![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white)
+![ES6+](https://img.shields.io/badge/ES6%2B-Modern-orange)
+![OOP](https://img.shields.io/badge/Paradigm-OOP-blue)
+
+Este projeto foi desenvolvido como parte dos meus estudos sobre o paradigma de **Orientação a Objetos (OO)** no JavaScript. O foco principal foi entender como estruturar aplicações modulares, reutilizáveis e seguras através de classes, métodos e o uso moderno de atributos privados.
 
 ---
 
@@ -8,19 +13,19 @@ Este projeto foi desenvolvido como parte dos meus estudos sobre o paradigma de *
 
 Neste projeto, foram aplicados os pilares fundamentais da programação orientada a objetos:
 
-* **Classes e Instâncias:** Criação de moldes para objetos complexos, como `Cliente` e `ContaCorrente`.
-* **Encapsulamento:** Uso de atributos privados (prefixados com `#`) para proteger dados sensíveis e garantir que o estado interno do objeto só seja alterado por métodos específicos.
-* **Construtores:** Padronização da criação de novos objetos, garantindo que atributos essenciais sejam definidos no momento da instanciação.
-* **Atributos e Métodos:** Implementação de comportamentos (métodos como `depositar` e `transferir`) e propriedades de instância e de classe.
-* **Referências e Composição:** Entendimento de como o JavaScript lida com objetos na memória e como compor classes (um objeto `ContaCorrente` que contém um objeto `Cliente`).
+* **Classes e Instâncias:** Criação de moldes para objetos complexos (`Cliente` e `ContaCorrente`).
+* **Encapsulamento:** Uso de atributos privados (prefixados com `#`) para proteger dados sensíveis, garantindo a integridade do estado interno.
+* **Construtores:** Padronização da criação de novos objetos com atributos obrigatórios na instanciação.
+* **Comportamentos (Métodos):** Implementação de lógica de negócio (`depositar`, `transferir`) encapsulada na classe correspondente.
+* **Referências e Composição:** Prática de composição de objetos, onde uma `ContaCorrente` possui um `Cliente` como atributo, simulando relacionamentos reais.
 
 ---
 
 ## 📂 Estrutura do Projeto
 
-* **`Cliente.js`**: Define a classe que representa o titular da conta, utilizando construtores para inicializar CPF e nome.
-* **`ContaCorrente.js`**: Contém a lógica de negócio bancária, incluindo saldos, depósitos, saques e transferências entre contas.
-* **`index.js`**: Arquivo principal onde as instâncias são criadas e as interações entre clientes e contas são executadas.
+* **`Cliente.js`**: Classe que representa o titular, focada em dados de identificação (CPF, nome).
+* **`ContaCorrente.js`**: Centraliza a lógica bancária e o controle de saldo.
+* **`index.js`**: Orquestrador do sistema, responsável por instanciar as classes e executar as transações.
 
 ---
 
@@ -33,17 +38,17 @@ Neste projeto, foram aplicados os pilares fundamentais da programação orientad
 
 ## 💻 Como Executar
 
-Como o projeto utiliza módulos do ES6 (especificado no `package.json`), você pode executá-lo diretamente com o Node:
+O projeto utiliza **ES Modules** (configurado via `package.json`).
 
-1.  Navegue até a pasta:
+1.  **Navegue até a pasta:**
     ```bash
     cd Frontend/javascript/js-poo
     ```
 
-2.  Execute o arquivo principal:
+2.  **Execute o código:**
     ```bash
     node index.js
     ```
 
 ---
-Desenvolvido durante o curso de JavaScript programando Orientado a objetos (Alura).
+> *Desenvolvido durante o curso de JavaScript: Programando a Orientação a Objetos (Alura).*
