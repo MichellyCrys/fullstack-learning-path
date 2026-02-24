@@ -39,7 +39,7 @@ Este projeto está sendo desenvolvido durante o curso **FastAPI do Zero (Ediçã
 - [x] **Aula 07:** **Refatoração, Routers e Annotated.**
 - [x] **Aula 08:** **Programação Assíncrona com AsyncIO e SQLAlchemy.**
 - [x] **Aula 09:** **Tornando o sistema de autenticação robusto.**
-- [ ] **Aula 10:** Próximo passo: Relacionamentos entre tabelas (One-to-Many).
+- [ ] **Aula 10:** Próximo passo: Criando Rotas CRUD para Gerenciamento de Tarefas .
 
 ---
 
