@@ -133,27 +133,6 @@ cd fastapi_zero
 poetry env use 3.13
 ```
 
-### Novas Ferramentas de Teste (Dev)
-Para suportar o asincronismo, adicionamos as seguintes bibliotecas:
-
-```bash
-# SQLAlchemy com suporte a asyncio e driver para SQLite assíncrono
-poetry add "sqlalchemy[asyncio]" aiosqlite
-
-# Suporte ao Pytest para lidar com corrotinas
-poetry add --group dev pytest-asyncio
-```
-
-Para garantir a robustez da Aula 09, instalamos:
-
-```bash
-# Geração de dados fakes e modelos
-poetry add --group dev factory-boy
-
-# Manipulação de tempo em testes
-poetry add --group dev freezegun
-```
-
 ## 📦 Gerenciamento de Dependências
 O projeto utiliza o Poetry para um gerenciamento preciso de pacotes, separando o que é essencial para o funcionamento da API do que é necessário apenas durante o desenvolvimento.
 
@@ -201,6 +180,27 @@ poetry install
 # Habilita o ambiente virtual
 poetry shell
 
+```
+
+### 4. Novas Ferramentas de Teste (Dev)
+Para suportar o asincronismo, adicionamos as seguintes bibliotecas:
+
+```bash
+# SQLAlchemy com suporte a asyncio e driver para SQLite assíncrono
+poetry add "sqlalchemy[asyncio]" aiosqlite
+
+# Suporte ao Pytest para lidar com corrotinas
+poetry add --group dev pytest-asyncio
+```
+
+Para garantir a robustez da Aula 09, instalamos:
+
+```bash
+# Geração de dados fakes e modelos
+poetry add --group dev factory-boy
+
+# Manipulação de tempo em testes
+poetry add --group dev freezegun
 ```
 
 ## 🔧 Configuração das Ferramentas (pyproject.toml)
