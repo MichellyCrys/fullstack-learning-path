@@ -2,8 +2,12 @@
 
 ![Python Version](https://img.shields.io/badge/python-3.13%2B-blue?logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115%2B-05998b?logo=fastapi)
+![Security](https://img.shields.io/badge/Security-JWT%20%26%20Refresh%20Token-red)
 ![Poetry](https://img.shields.io/badge/Packaging-Poetry-blue?logo=poetry)
 ![Ruff](https://img.shields.io/badge/Linter-Ruff-orange)
+![Asynchronous](https://img.shields.io/badge/AsyncIO-Supported-blueviolet)
+![SQLAlchemy](https://img.shields.io/badge/ORM-SQLAlchemy%20Async-red)
+![Tests](https://img.shields.io/badge/Tests-FactoryBoy%20%26%20FreezeGun-yellow?logo=pytest)
 ![TDD](https://img.shields.io/badge/Tests-Pytest-yellow?logo=pytest)
 
 Este projeto está sendo desenvolvido durante o curso **FastAPI do Zero (Edição 2025)**, ministrado pelo Dunossauro. O foco principal é aprender a construir APIs robustas, testáveis e performáticas seguindo as melhores práticas do mercado.
@@ -31,9 +35,11 @@ Este projeto está sendo desenvolvido durante o curso **FastAPI do Zero (Ediçã
 - [x] **Aula 03:** Implementação completa das operações **CRUD** básicas.
 - [x] **Aula 04:** Integração com **Banco de Dados (SQLAlchemy)** e gerenciamento de **Migrações (Alembic)**.
 - [x] **Aula 05:** Integração do **SQLAlchemy** e Testes com **Fixtures**.
+- [x] **Aula 06:** Autenticação e Autorização com tokens JWT
 - [x] **Aula 07:** **Refatoração, Routers e Annotated.**
 - [x] **Aula 08:** **Programação Assíncrona com AsyncIO e SQLAlchemy.**
-- [ ] **Aula 09:** Próximo passo: Tornando o sistema de autenticação robusto.
+- [x] **Aula 09:** **Tornando o sistema de autenticação robusto.**
+- [ ] **Aula 10:** Próximo passo: Relacionamentos entre tabelas (One-to-Many).
 
 ---
 
@@ -67,6 +73,26 @@ Nesta etapa, transformamos a aplicação em uma API **não bloqueante**:
 * **Infraestrutura de Testes:** Integração do `pytest-asyncio` e reformulação das fixtures para suportar contextos assíncronos (`AsyncClient` e `AsyncSession`).
 * **Migrações Assíncronas:** Ajuste no `env.py` do Alembic para suportar a nova engine de conexão assíncrona.
 * **Cobertura de Código:** Configuração do Coverage para lidar com concorrência (`greenlet`), garantindo métricas reais de teste.
+
+## 🛡️ Evolução Técnica: Autenticação Robusta (Aula 09)
+
+Nesta etapa, elevamos a segurança da aplicação para um nível de produção, focando em **resiliência e experiência do usuário**:
+
+### 🔄 Implementação de Refresh Token
+Para melhorar a UX, criamos o endpoint `/refresh_token`. Isso permite que o usuário renove seu acesso sem precisar reenviar as credenciais (login/senha) a cada 30 minutos, mantendo a sessão segura e fluida.
+
+
+
+### 🧪 Testes de Cenários Adversos (Edge Cases)
+Não testamos apenas o "caminho feliz". Implementamos testes para:
+* **Usuários não autorizados:** Garantindo que um usuário não consiga alterar ou deletar dados de terceiros (HTTP 403 Forbidden).
+* **Expiração de Token:** Uso do `freezegun` para simular a passagem de tempo e validar o erro `ExpiredSignatureError`.
+* **Credenciais Inválidas:** Testes rigorosos para usuários inexistentes e senhas incorretas.
+
+### 🏭 Fábrica de Modelos (Factory-boy)
+Substituímos a criação manual de objetos de teste pela `UserFactory`. Isso permite:
+* Criar múltiplos usuários de forma sequencial e automática.
+* Manter os testes limpos e focados na lógica, não no setup de dados.
 
 ---
 
@@ -105,6 +131,27 @@ cd fastapi_zero
 
 # Informando ao Poetry qual versão usar
 poetry env use 3.13
+```
+
+### Novas Ferramentas de Teste (Dev)
+Para suportar o asincronismo, adicionamos as seguintes bibliotecas:
+
+```bash
+# SQLAlchemy com suporte a asyncio e driver para SQLite assíncrono
+poetry add "sqlalchemy[asyncio]" aiosqlite
+
+# Suporte ao Pytest para lidar com corrotinas
+poetry add --group dev pytest-asyncio
+```
+
+Para garantir a robustez da Aula 09, instalamos:
+
+```bash
+# Geração de dados fakes e modelos
+poetry add --group dev factory-boy
+
+# Manipulação de tempo em testes
+poetry add --group dev freezegun
 ```
 
 ## 📦 Gerenciamento de Dependências
