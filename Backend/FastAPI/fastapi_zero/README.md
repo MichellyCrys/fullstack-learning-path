@@ -16,15 +16,11 @@ Este projeto está sendo desenvolvido durante o curso **FastAPI do Zero (Ediçã
 
 ## 🛠️ Tecnologias e Ferramentas (Stack 2025)
 
-* **Python 3.13+**
-* **FastAPI (v0.115+):** Framework moderno e de alta performance.
-* **Poetry:** Gerenciamento de dependências e ambientes virtuais.
-* **Pydantic (v2.0+):** Validação de dados e schemas.
-* **SQLAlchemy (v2.0+):** ORM para comunicação com banco de dados.
-* **Alembic:** Gerenciamento de migrações.
-* **Pytest:** Foco total em TDD (Test-Driven Development).
-* **Ruff:** Linter e formatador de código (extremamente rápido).
-* **Taskipy:** Executor de tarefas automatizadas.
+* **Core:** Python 3.13+, FastAPI (Async), Pydantic v2.
+* **Banco de Dados:** SQLAlchemy (Async), Alembic, **Relacionamentos 1:N**.
+* **Segurança:** Autenticação JWT e Autorização de Nível de Registro (Owner-only).
+* **Testes:** Pytest, Factory-boy (FuzzyChoice/Sequence), Freezegun.
+* **Arquitetura:** APIRouter, **Clean Code**, Pydantic-Settings.
 
 ---
 
@@ -39,7 +35,8 @@ Este projeto está sendo desenvolvido durante o curso **FastAPI do Zero (Ediçã
 - [x] **Aula 07:** **Refatoração, Routers e Annotated.**
 - [x] **Aula 08:** **Programação Assíncrona com AsyncIO e SQLAlchemy.**
 - [x] **Aula 09:** **Tornando o sistema de autenticação robusto.**
-- [ ] **Aula 10:** Próximo passo: Criando Rotas CRUD para Gerenciamento de Tarefas .
+- [x] **Aula 10:** **Relacionamentos (1:N) e CRUD de Tarefas (Todos).**
+- [ ] **Aula 11:** Próximo passo: Dockerizando a aplicação e PostgreSQL.
 
 ---
 
@@ -93,6 +90,29 @@ Não testamos apenas o "caminho feliz". Implementamos testes para:
 Substituímos a criação manual de objetos de teste pela `UserFactory`. Isso permite:
 * Criar múltiplos usuários de forma sequencial e automática.
 * Manter os testes limpos e focados na lógica, não no setup de dados.
+
+## 🏗️ Evolução da Arquitetura e Modelagem (Aula 10)
+
+Nesta etapa, a aplicação expandiu sua lógica de negócio para gerenciar tarefas vinculadas a usuários específicos:
+
+### 🔗 Modelagem Relacional (SQLAlchemy)
+Implementamos a relação entre `User` e `Todo`:
+* **1:N (One-to-Many):** Cada usuário possui uma lista de tarefas.
+* **Cascade Delete:** Configuração `delete-orphan` para garantir que, ao excluir um usuário, todas as suas tarefas sejam removidas automaticamente.
+* **Enums:** Uso de `TodoState` para padronizar os estados das tarefas (`draft`, `todo`, `doing`, `done`, `trash`).
+
+
+
+### 🔍 Endpoints Inteligentes e Filtragem
+O CRUD de tarefas foi desenhado para ser flexível e performático:
+* **Filtros Dinâmicos:** Implementação de busca por `title`, `description` e `state` usando o operador `.contains` do SQLAlchemy.
+* **Paginação:** Suporte nativo a `limit` e `offset` via Query Strings.
+* **Patch Dinâmico:** Atualização parcial de recursos usando `model_dump(exclude_unset=True)`.
+
+### 🏭 Testes Avançados (Factory-boy Fuzzy)
+Evoluímos a `TodoFactory` para simular cenários complexos:
+* **FuzzyChoice:** Geração de estados de tarefas aleatórios para testes de listagem.
+* **Batch Testing:** Uso de `create_batch` para testar paginação e filtros com grandes volumes de dados.
 
 ---
 
