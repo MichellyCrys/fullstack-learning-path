@@ -1,52 +1,124 @@
-# 📇 Indexa - Agenda de Contatos
+# 📇 Indexa
 
-![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=flat&logo=angular&logoColor=white)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white)
-![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white)
+![Angular](https://img.shields.io/badge/angular-v17%2B-dd0031?logo=angular)
+![TypeScript](https://img.shields.io/badge/typescript-007acc?logo=typescript)
+![Status](https://img.shields.io/badge/status-stable-blue)
 
-O **Indexa** é uma aplicação de agenda de contatos desenvolvida em **Angular**. O projeto foca na construção de interfaces modulares e na utilização de recursos modernos da linguagem de template do framework para a exibição dinâmica de dados.
+Aplicação frontend desenvolvida com Angular para gerenciamento e exibição de contatos.
 
----
-
-## 🚀 Conceitos e Funcionalidades
-
-Neste projeto, foram exploradas as seguintes capacidades do Angular:
-
-* **Componentes Reutilizáveis:** Organização da aplicação em componentes independentes e modulares (`Cabecalho`, `Container`, `Contato` e `Separador`).
-* **Fluxo de Controle Moderno (@for):** Utilização da nova sintaxe de template do Angular (v17+) para iterar sobre a lista de contatos com maior performance.
-* **Manipulação de Dados Local (JSON):** Implementação da leitura de arquivos JSON para alimentar a interface.
-* **Configuração Técnica:** Ajuste no `tsconfig.json` (`resolveJsonModule`) para permitir a importação nativa de dados estáticos.
-* **Angular CLI:** Uso da CLI para geração de estrutura, build e execução do projeto.
-* **Estilização Componentizada:** Prática de CSS focado em componentes para garantir um layout responsivo e organizado.
+O projeto tem como foco a arquitetura baseada em componentes, uso da nova sintaxe de controle de fluxo do Angular (v17+) e organização modular da interface.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+# 🎯 Objetivo do Projeto
 
-* **Framework:** Angular (v17+).
-* **Linguagem:** TypeScript.
-* **Estilização:** CSS3.
-* **Dados:** Arquivo JSON local.
+Consolidar conceitos modernos de desenvolvimento com Angular:
+
+- Componentização e reutilização
+- Fluxo de controle com `@for`
+- Separação de responsabilidades
+- Importação de dados estáticos via JSON
+- Estruturação de projeto com Angular CLI
+- Organização visual com CSS componentizado
+
+---
+
+# 🚀 Funcionalidades
+
+- 📋 Listagem de contatos
+- 🔠 Organização alfabética
+- 🧩 Componentes independentes e reutilizáveis
+- 📦 Leitura de dados estáticos via JSON
 
 ---
 
-## 💻 Como Executar o Projeto
+# 🏗️ Arquitetura
 
-Este projeto requer o **Node.js** e o **Angular CLI** instalados.
+A aplicação segue o padrão SPA (Single Page Application), organizada em componentes desacoplados.
 
-1.  **Instale as dependências:**
-    ```bash
-    npm install
-    ```
+## Estrutura Simplificada
 
-2.  **Inicie o servidor de desenvolvimento:**
-    ```bash
-    ng serve
-    ```
+```
 
-3.  **Acesse no navegador:**
-    Abra `http://localhost:4200` para visualizar a aplicação.
+indexa/src
+├── app/
+│  ├── components/
+│  │   ├── cabecalho/
+│  │   ├── container/
+│  │   ├── contato/
+│  │   └── separador/
+│  └──
+└──
+
+```
+
+## Fluxo de Renderização
+
+```mermaid
+flowchart LR
+
+    A[JSON Local] --> B[App Component]
+    B --> C[@for Directive]
+    C --> D[Contato Component]
+```
 
 ---
-> *Desenvolvido durante o curso "Angular: construa uma aplicação web com componentes, linguagem de template e CLI" (Alura).*
+
+# 🛠️ Tecnologias Utilizadas
+
+### Framework
+
+* Angular (v17+)
+
+### Linguagem
+
+* TypeScript
+
+### Estilização
+
+* CSS3 (escopo por componente)
+
+### Ferramentas
+
+* Angular CLI
+* Node.js
+
+---
+
+# ⚙️ Como Executar
+
+Instalar dependências:
+
+```bash
+npm install
+```
+
+Executar aplicação:
+
+```bash
+ng serve
+```
+
+Acessar:
+
+```
+http://localhost:4200
+```
+
+---
+
+# ⚠️ Limitações Atuais
+
+* Dados estáticos (sem backend)
+* Sem persistência
+* Sem testes automatizados
+* Sem gerenciamento de estado externo
+
+---
+
+
+# 📈 Papel Dentro do Ecossistema
+
+O Indexa consolida fundamentos de componentização e controle de fluxo no Angular moderno, servindo como base para aplicações mais complexas com integração backend e arquitetura fullstack.
+
+---
