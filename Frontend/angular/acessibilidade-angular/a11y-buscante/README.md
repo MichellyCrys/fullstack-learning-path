@@ -1,41 +1,135 @@
-![Buscante](thumbnail.png)
+# 🔎 Buscante
 
-# Buscante
+![Angular](https://img.shields.io/badge/angular-v14%2B-dd0031?logo=angular)
+![RxJS](https://img.shields.io/badge/rxjs-reactive-b7178c?logo=reactivex)
+![API](https://img.shields.io/badge/api-google%20books-blue)
+![Status](https://img.shields.io/badge/status-stable-blue)
 
-Aplicação que permite pesquisar e descobrir livros utilizando a API do Google Books. 
+Aplicação frontend desenvolvida em Angular para pesquisa e descoberta de livros utilizando a Google Books API.
 
-## 🔨 Funcionalidades do projeto
+O projeto foca em consumo de APIs externas, arquitetura baseada em componentes e implementação de boas práticas de acessibilidade.
 
-### Pesquisa de Livros:
+---
 
-As pessoas podem inserir palavras-chave na barra de pesquisa para buscar livros de forma dinâmica.
+# 🎯 Objetivo do Projeto
 
-### Detalhes do Livro:
+Consolidar conceitos modernos de desenvolvimento frontend:
 
-Ao clicar em um livro específico pode-se obter mais detalhes, como título, sinopse, autoria e outras informações fornecidas pela API do Google Books.
+- Consumo de API REST
+- Programação reativa com RxJS
+- Componentização
+- Gerenciamento de estado assíncrono
+- Acessibilidade (WCAG / ARIA)
+- Boas práticas de UX
 
-### Link para ler prévia do livro:
+---
 
-Link com opção de ler uma prévia do livro.
+# 🚀 Funcionalidades
 
-## ✔️ Técnicas e tecnologias utilizadas
+- 🔍 Pesquisa dinâmica de livros
+- 📖 Visualização detalhada de obra
+- 📝 Exibição de título, autoria e sinopse
+- 🔗 Link para prévia do livro
+- ♿ Melhorias de acessibilidade (navegação e foco)
 
-As técnicas e tecnologias utilizadas foram:
+---
 
-- `Angular`
-- `Google Books API`
-- `RxJs`
+# 🏗️ Arquitetura
 
-## 📁 Acesso ao projeto
+A aplicação segue o padrão SPA (Single Page Application):
 
-Você pode [acessar o código fonte do projeto inicial](https://github.com/nayannelbatista/3491-angular-a11y) ou [baixá-lo](https://github.com/nayannelbatista/3491-angular-a11y/archive/refs/heads/projeto-base.zip).
+Usuário → Componente Angular → Service → HTTP Client → Google Books API → Resposta → Atualização reativa da UI
 
-## 🛠️ Abrir e rodar o projeto
+## Estrutura Simplificada
 
-Para abrir e rodar o projeto, execute *npm i* para instalar as dependências e *ng serve* para iniciar o projeto.
+```
 
-Depois, acesse [http://localhost:4200/](url) no seu navegador. 
+buscante/src
+│
+├── app/
+│  ├── componentes
+│  ├── models
+│  ├── pages
+│  ├── services/
+└── assets/
 
-## 📚 Mais informações do curso
+```
 
-O curso visa implementar estratégias de acessibilidade para tornar o Buscante uma aplicação mais inclusiva e acessível.
+## Diagrama Arquitetural
+
+```mermaid
+flowchart LR
+
+    A[User] --> B[Angular Components]
+    B --> C[Service Layer]
+    C --> D[HttpClient]
+    D --> E[Google Books API]
+    E --> B
+```
+
+---
+
+# 🛠️ Tecnologias Utilizadas
+
+### Framework
+
+* Angular
+
+### Programação Reativa
+
+* RxJS
+
+### Integração Externa
+
+* Google Books API
+
+### Conceitos Aplicados
+
+* Observables
+* Async Pipes
+* Componentes reutilizáveis
+* Acessibilidade com boas práticas WCAG
+
+---
+
+# ⚙️ Como Executar
+
+```bash
+cd Frontend/angular/acessibilidade-angular/a11y-buscante
+```
+
+Instalar dependências:
+
+```bash
+npm install
+```
+
+Executar aplicação:
+
+```bash
+ng serve
+```
+
+Acessar:
+
+```
+http://localhost:4200/
+```
+
+---
+
+# ⚠️ Limitações Atuais
+
+* Sem backend próprio
+* Dependência direta da API pública
+* Sem cache local
+* Sem testes automatizados
+
+---
+
+
+# 📈 Evolução Dentro do Learning Path
+
+Este projeto representa a consolidação do consumo de APIs externas no frontend, preparando a base para integração fullstack com os projetos backend do repositório.
+
+---
