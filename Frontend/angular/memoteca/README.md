@@ -1,69 +1,164 @@
-# 📝 MemoTeca - Mural de Pensamentos (Versão Evoluída)
+# 📝 MemoTeca
 
-![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=flat&logo=angular&logoColor=white)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white)
-![RxJS](https://img.shields.io/badge/rxjs-%23B7178C.svg?style=flat&logo=reactivex&logoColor=white)
-![JSON Server](https://img.shields.io/badge/api-json--server-black)
-![Bootstrap](https://img.shields.io/badge/bootstrap-%238511f2.svg?style=flat&logo=bootstrap&logoColor=white)
+![Angular](https://img.shields.io/badge/angular-v14%2B-dd0031?logo=angular)
+![RxJS](https://img.shields.io/badge/rxjs-reactive-b7178c?logo=reactivex)
+![REST API](https://img.shields.io/badge/api-rest-black)
+![Status](https://img.shields.io/badge/status-stable-blue)
 
-O **MemoTeca** é um mural de pensamentos virtual desenvolvido em **Angular**. A aplicação evoluiu de um protótipo inicial para uma ferramenta completa com validações rigorosas, busca dinâmica, paginação e sistema de favoritos.
+Aplicação SPA desenvolvida em Angular para gerenciamento de pensamentos em formato de mural digital.
 
----
-
-## 🚀 Funcionalidades e Evolução
-
-Neste projeto, além do fluxo de **CRUD Completo**, foram implementadas as seguintes melhorias:
-
-* **Formulários Reativos:** Migração total para o modelo de `Reactive Forms`, garantindo maior controle e escalabilidade.
-* **Validações de Formulário:** Implementação de regras de validação (campos obrigatórios, quantidade de caracteres e validações customizadas).
-* **Busca e Filtragem:** Campo de busca dinâmica que filtra os pensamentos em tempo real através da API.
-* **Paginação:** Sistema de "Carregar mais" para otimizar a performance.
-* **Sistema de Favoritos:** Lógica para favoritar pensamentos com persistência no banco de dados e filtro exclusivo.
-* **Recarregamento Inteligente:** Uso do serviço `Router` para forçar a atualização da interface sem refresh total.
+O projeto evolui de um CRUD simples para uma aplicação com validações robustas, busca dinâmica, paginação e controle de favoritos com persistência.
 
 ---
 
-## 🛠️ Conceitos Avançados Aplicados
+# 🎯 Objetivo do Projeto
 
-* **Reactive Forms & FormBuilder:** Criação de formulários programáticos com estados de validade em tempo real.
-* **Comunicação Avançada (HTTP):** Uso de `HttpParams` para enviar parâmetros de busca, ordenação e paginação dinamicamente.
-* **Lógica de Reutilização:** Adaptação de componentes para lidar com diferentes estados de listagem.
-* **Injeção de Dependência:** Uso de serviços para centralizar regras de negócio e comunicação externa.
+Consolidar conceitos avançados de frontend moderno:
 
----
-
-## 💻 Tecnologias e Ferramentas
-
-* **Framework:** Angular (v14+).
-* **Backend Simulado:** JSON Server (API REST).
-* **Estilização:** CSS Customizado e Bootstrap.
-* **Linguagem:** TypeScript.
+- CRUD completo com API REST
+- Reactive Forms
+- Comunicação HTTP parametrizada
+- Manipulação de estado assíncrono
+- Reutilização de componentes
+- Organização de regras de negócio em serviços
+- UX otimizada com paginação e filtros
 
 ---
 
-## 🚀 Como Executar o Projeto
+# 🚀 Funcionalidades
 
-Este projeto requer o **Node.js** e o **Angular CLI** instalados.
-
-1.  **Instale as dependências:**
-    ```bash
-    npm install
-    ```
-
-2.  **Inicie o Backend (JSON Server):**
-    Abra um terminal separado na pasta `backend` e execute:
-    ```bash
-    npm start
-    ```
-
-3.  **Inicie o Frontend:**
-    No terminal principal, execute:
-    ```bash
-    ng serve
-    ```
-
-4.  **Acesse no navegador:**
-    `http://localhost:4200`
+- ➕ Criação de pensamento
+- ✏️ Edição
+- 🗑️ Exclusão
+- 🔍 Busca dinâmica
+- 📄 Paginação incremental ("Carregar mais")
+- ⭐ Sistema de favoritos com persistência
+- ✅ Validações reativas em tempo real
 
 ---
-> *Desenvolvido durante os cursos de Angular da **Alura**.*
+
+# 🏗️ Arquitetura
+
+A aplicação segue padrão SPA com separação clara entre:
+
+UI → Componentes  
+Regra de negócio → Services  
+Comunicação externa → HttpClient  
+Persistência → API REST (JSON Server)
+
+## Estrutura Simplificada
+
+```
+
+memoteca/
+│
+├── backend/
+│  ├── db.json
+├── src/
+│  ├── app/
+│  |  ├── componentes
+│  |  |  ├── cabecalho
+│  |  |  ├── pensamentos
+│  |  |  └── rodape
+|  └── assets
+└── 
+
+```
+
+## Fluxo de Dados
+
+```mermaid
+flowchart LR
+
+    A[User Interaction] --> B[Component]
+    B --> C[Reactive Form]
+    C --> D[Service Layer]
+    D --> E[HttpClient]
+    E --> F[REST API]
+    F --> B
+```
+
+---
+
+# 🛠️ Tecnologias Utilizadas
+
+### Frontend
+
+* Angular (v14+)
+* TypeScript
+* RxJS
+* Reactive Forms
+
+### Backend (Simulado)
+
+* JSON Server
+
+### Estilização
+
+* CSS customizado
+* Bootstrap
+
+---
+
+# ⚙️ Como Executar
+
+Instalar dependências:
+
+```bash
+npm install
+```
+
+Iniciar backend (em outro terminal):
+
+```bash
+cd backend
+npm start
+```
+
+Executar frontend:
+
+```bash
+ng serve
+```
+
+Acessar:
+
+```
+http://localhost:4200
+```
+
+---
+
+# ⚠️ Limitações Atuais
+
+* Backend simulado (não persistente em produção)
+* Sem autenticação
+* Sem testes automatizados
+* Sem gerenciamento de estado global
+
+---
+
+
+# 📈 Papel Dentro do Ecossistema
+
+O MemoTeca representa o estágio intermediário do frontend no ecossistema do repositório:
+
+Indexa → Estrutura e Componentização
+Buscante → Consumo de API Externa
+MemoTeca → CRUD Completo + Estado Reativo
+
+Ele serve como base direta para integração fullstack com APIs reais e ambientes containerizados.
+
+---
+
+# 🔎 Posicionamento Estratégico
+
+Agora sua trilha frontend está organizada por complexidade:
+
+| Projeto     | Nível Técnico |
+|-------------|---------------|
+| Indexa      | Fundamentos de Componentização |
+| Buscante    | Consumo de API + RxJS |
+| MemoTeca    | CRUD Completo + Arquitetura SPA |
+
+---
