@@ -48,12 +48,13 @@ Cliente → Rota Flask → Lógica de Negócio → Template Jinja2 → Resposta 
 jogoteca/
 │
 ├── templates/
-│   ├── template base
-│   ├── listagem
-│   └── formulário
+│   ├── lista
+│   ├── login
+│   ├── novo
+│   └── templete
 │
 ├── static/
-│   └── arquivos CSS / assets
+│   └── arquivos CSS
 │
 └── jogoteca.py
 
@@ -160,7 +161,5 @@ http://localhost:5000
 # 📈 Evolução Dentro do Learning Path
 
 Este projeto representa a base do desenvolvimento backend tradicional (server-side rendering), servindo como fundamento para arquiteturas mais avançadas implementadas nos projetos com FastAPI.
-
-```
 
 ---
