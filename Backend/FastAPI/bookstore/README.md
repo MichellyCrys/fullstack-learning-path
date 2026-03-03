@@ -1,58 +1,143 @@
-# 📚 Bookstore API - FastAPI
+# 📚 Bookstore API
 
-![Python Version](https://img.shields.io/badge/python-3.10%2B-blue?logo=python)
-![FastAPI](https://img.shields.io/badge/FastAPI-05998b?logo=fastapi&logoColor=white)
-![Uvicorn](https://img.shields.io/badge/ASGI-Uvicorn-black?logo=python)
-![Swagger](https://img.shields.io/badge/Docs-Swagger-85EA2D?logo=swagger&logoColor=black)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/fastapi-async-05998b?logo=fastapi)
+![ASGI](https://img.shields.io/badge/asgi-uvicorn-black)
+![OpenAPI](https://img.shields.io/badge/docs-openapi-green?logo=swagger)
+![Status](https://img.shields.io/badge/status-foundation-blue)
 
-Esta é uma API desenvolvida em Python utilizando o framework **FastAPI**. O projeto simula o sistema de uma livraria, focando em conceitos fundamentais de rotas, tipagem e documentação automática.
-
----
-
-## 🚀 Funcionalidades
-
-* **Listar Livros:** Endpoint para retornar as informações detalhadas das obras disponíveis.
-* **Processar Compras:** Lógica inicial para simular a aquisição de títulos.
-* **Documentação Interativa:** Interface de teste da API gerada automaticamente.
+API REST desenvolvida com FastAPI para simular o gerenciamento de uma livraria.  
+O projeto consolida fundamentos de construção de serviços HTTP modernos com tipagem forte, validação automática e documentação interativa.
 
 ---
 
-## 🛠️ Tecnologias e Ferramentas
+# 🎯 Objetivo do Projeto
 
-* **Framework:** FastAPI
-* **Servidor ASGI:** Uvicorn
-* **Linguagem:** Python 3.10+
-* **Validação:** Pydantic (Type Hints)
+Consolidar fundamentos de APIs REST utilizando FastAPI:
+
+- Definição de rotas HTTP
+- Uso de Type Hints
+- Validação automática com Pydantic
+- Geração automática de documentação (OpenAPI)
+- Execução via servidor ASGI
+
+Este projeto representa a base para arquiteturas mais robustas implementadas nos projetos evolutivos do repositório.
+
+---
+
+# 🚀 Funcionalidades
+
+- 📖 Listagem de livros
+- 💳 Simulação de compra
+- 📑 Documentação automática via Swagger UI
+- 🔎 Validação automática de dados de entrada
 
 ---
 
-## 💻 Como Executar
+# 🏗️ Arquitetura
 
-1.  **Navegue até a pasta do projeto:**
-    ```bash
-    cd Backend/FastAPI/bookstore
-    ```
+A aplicação segue o modelo padrão de API REST com FastAPI:
 
-2.  **(Opcional) Crie e ative um ambiente virtual:**
-    ```bash
-    python -m venv venv
-    .\venv\Scripts\activate  # Windows
-    # source venv/bin/activate  # Linux/Mac
-    ```
+Cliente → Endpoint HTTP → Validação (Pydantic) → Lógica → Resposta JSON
 
-3.  **Instale as dependências:**
-    ```bash
-    pip install fastapi uvicorn
-    ```
+## Estrutura Simplificada
 
-4.  **Inicie o servidor:**
-    ```bash
-    uvicorn main:app --reload
-    ```
+```
 
-5.  **Acesse a documentação:**
-    * **Swagger UI:** `http://127.0.0.1:8000/docs`
-    * **ReDoc:** `http://127.0.0.1:8000/redoc`
+bookstore/
+│
+├── books.json
+└── main.py
+
+```
+
+## Diagrama Arquitetural
+
+```mermaid
+flowchart LR
+
+    A[Client / Browser] --> B[FastAPI Routes]
+    B --> C[Pydantic Validation]
+    C --> D[Business Logic]
+    D --> E[JSON Response]
+```
 
 ---
-> *Este projeto foi desenvolvido durante o curso "FastAPI em Python em 1 hora - Iniciante".*
+
+# 🛠️ Tecnologias Utilizadas
+
+### Backend
+
+* Python 3.10+
+* FastAPI
+
+### Servidor
+
+* Uvicorn (ASGI)
+
+### Validação e Modelagem
+
+* Pydantic
+* Type Hints
+
+### Documentação
+
+* OpenAPI
+* Swagger UI
+* ReDoc
+
+---
+
+# ⚙️ Como Executar
+
+```bash
+cd Backend/FastAPI/bookstore
+```
+
+Criar ambiente virtual (opcional):
+
+```bash
+python -m venv venv
+```
+
+Ativar:
+
+Windows:
+
+```bash
+.\venv\Scripts\activate
+```
+
+Linux/macOS:
+
+```bash
+source venv/bin/activate
+```
+
+Instalar dependências:
+
+```bash
+pip install fastapi uvicorn
+```
+
+Executar:
+
+```bash
+uvicorn main:app --reload
+```
+
+Acessar documentação:
+
+* Swagger UI → [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+* ReDoc → [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+
+---
+
+# ⚠️ Limitações Atuais
+
+* Persistência em memória
+* Sem banco de dados
+* Sem autenticação
+* Sem testes automatizados
+
+---
