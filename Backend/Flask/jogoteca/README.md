@@ -1,62 +1,166 @@
-# 🎮 Jogoteca - Catálogo de Jogos
+# 🎮 Jogoteca
 
-![Python Version](https://img.shields.io/badge/python-3.x-blue?logo=python)
-![Flask](https://img.shields.io/badge/flask-%23000.svg?logo=flask&logoColor=white)
-![Jinja2](https://img.shields.io/badge/jinja-%23b41717.svg?logo=jinja&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/bootstrap-%238511f2.svg?logo=bootstrap&logoColor=white)
+![Python](https://img.shields.io/badge/python-3.x-blue?logo=python)
+![Flask](https://img.shields.io/badge/flask-application-black?logo=flask)
+![Jinja2](https://img.shields.io/badge/jinja2-template-red?logo=jinja)
+![Bootstrap](https://img.shields.io/badge/bootstrap-responsive-purple?logo=bootstrap)
+![Status](https://img.shields.io/badge/status-stable-blue)
 
-A **Jogoteca** é uma aplicação web desenvolvida em Python utilizando o framework **Flask**. O projeto foca em fundamentos do desenvolvimento server-side, manipulação de rotas e persistência temporária de dados.
+Aplicação web server-side construída com Flask, com foco na consolidação dos fundamentos de desenvolvimento backend tradicional utilizando renderização de templates no servidor.
 
----
-
-## 🚀 Funcionalidades Implementadas
-
-Neste projeto, foram desenvolvidos os conceitos fundamentais para aplicações web robustas:
-
-* **Sistema de Autenticação:** Controle de acesso com login e autorização para proteger rotas sensíveis.
-* **Listagem Dinâmica:** Renderização de tabelas de jogos consumindo dados do servidor via Python.
-* **Cadastro de Itens:** Formulários para inserção de novos títulos com validação de dados.
-* **Gestão de Sessão:** Uso do objeto `session` e `flash` messages para feedback visual ao usuário.
-* **Arquitetura de Templates:** Implementação do motor **Jinja2** com herança de blocos para criação de layouts modulares.
-
-
+O projeto implementa autenticação baseada em sessão, controle de rotas protegidas e organização modular de templates.
 
 ---
 
-## 🛠️ Tecnologias e Bibliotecas
+# 🎯 Objetivo do Projeto
 
-* **Framework Principal:** Flask
-* **Template Engine:** Jinja2
-* **Estilização:** Bootstrap 4/5 (Responsivo)
-* **Linguagem:** Python 3
+Consolidar conceitos fundamentais de aplicações web server-side:
+
+- Manipulação de rotas HTTP
+- Controle de sessão
+- Autenticação simples
+- Renderização com template engine
+- Estrutura MVC simplificada
+- Separação entre lógica e apresentação
+
+---
+
+# 🚀 Funcionalidades
+
+- 🔐 Autenticação baseada em sessão
+- 📋 Listagem dinâmica de jogos
+- ➕ Cadastro de novos títulos
+- 💬 Flash messages para feedback
+- 🎨 Layout base reutilizável com herança de templates
 
 ---
 
-## 💻 Como Executar o Projeto
+# 🏗️ Arquitetura
 
-1.  **Navegue até a pasta do projeto:**
-    ```bash
-    cd Backend/Flask/jogoteca
-    ```
+A aplicação segue um modelo server-side tradicional:
 
-2.  **(Opcional) Crie e ative um ambiente virtual:**
-    ```bash
-    python -m venv venv
-    .\venv\Scripts\activate  # Windows
-    ```
+Cliente → Rota Flask → Lógica de Negócio → Template Jinja2 → Resposta HTML
 
-3.  **Instale o Flask:**
-    ```bash
-    pip install flask
-    ```
+## Estrutura Simplificada
 
-4.  **Inicie a aplicação:**
-    ```bash
-    python jogoteca.py
-    ```
+```
 
-5.  **Acesse no navegador:**
-    `http://localhost:5000`
+jogoteca/
+│
+├── templates/
+│   ├── template base
+│   ├── listagem
+│   └── formulário
+│
+├── static/
+│   └── arquivos CSS / assets
+│
+└── jogoteca.py
+
+```
+
+## Diagrama Arquitetural
+
+```mermaid
+flowchart LR
+
+    A[Browser] --> B[Flask Routes]
+    B --> C[Session Control]
+    B --> D[Business Logic]
+    D --> E[Jinja2 Templates]
+    E --> A
+```
 
 ---
-> *Desenvolvido durante o curso "Flask: crie uma webapp com Python" (Alura).*
+
+# 🛠️ Tecnologias Utilizadas
+
+### Backend
+
+* Python 3
+* Flask
+
+### Template Engine
+
+* Jinja2
+
+### Frontend
+
+* Bootstrap
+* HTML5
+* CSS3
+
+---
+
+# ⚙️ Como Executar
+
+```bash
+cd Backend/Flask/jogoteca
+```
+
+Criar ambiente virtual (opcional):
+
+```bash
+python -m venv venv
+```
+
+Ativar:
+
+Windows:
+
+```bash
+.\venv\Scripts\activate
+```
+
+Linux/macOS:
+
+```bash
+source venv/bin/activate
+```
+
+Instalar dependências:
+
+```bash
+pip install flask
+```
+
+Executar:
+
+```bash
+python jogoteca.py
+```
+
+Acesse:
+
+```
+http://localhost:5000
+```
+
+---
+
+# ⚠️ Limitações Atuais
+
+* Persistência apenas em memória
+* Sem banco de dados
+* Autenticação simplificada
+* Sem testes automatizados
+
+---
+
+# 🧭 Roadmap de Evolução
+
+* [ ] Migrar persistência para SQLite
+* [ ] Implementar SQLAlchemy
+* [ ] Adicionar testes com Pytest
+* [ ] Separar aplicação em módulos
+* [ ] Containerizar com Docker
+
+---
+
+# 📈 Evolução Dentro do Learning Path
+
+Este projeto representa a base do desenvolvimento backend tradicional (server-side rendering), servindo como fundamento para arquiteturas mais avançadas implementadas nos projetos com FastAPI.
+
+```
+
+---
