@@ -216,17 +216,129 @@ task test
 
 ---
 
+## 🐳 Containerização e PostgreSQL
+
+A aplicação foi containerizada utilizando Docker, permitindo:
+
+- Ambiente reproduzível
+- Isolamento de dependências
+- Facilidade de deploy
+- Padronização entre desenvolvimento e produção
+
+Além disso, migramos do SQLite para **PostgreSQL**, tornando a aplicação mais adequada para ambientes reais.
+
+---
+
+## 📦 Dockerfile
+
+A aplicação possui um `Dockerfile` responsável por:
+
+- Definir a imagem base Python
+- Instalar dependências via Poetry
+- Copiar o código da aplicação
+- Configurar variáveis de ambiente
+- Expor a porta da API
+- Definir o comando de inicialização
+
+Isso garante que qualquer ambiente consiga executar a aplicação com apenas:
+
+```bash
+docker build -t fastapi-zero .
+docker run -p 8000:8000 fastapi-zero
+```
+
+---
+
+## 🐘 PostgreSQL
+
+A aplicação agora utiliza **PostgreSQL** como banco principal.
+
+### Motivos da migração:
+
+* Melhor suporte a concorrência
+* Confiabilidade em produção
+* Suporte avançado a índices e queries complexas
+* Compatibilidade com ambientes cloud
+
+A configuração é feita via variáveis de ambiente:
+
+```env
+DATABASE_URL=postgresql+asyncpg://user:password@db:5432/database
+```
+
+---
+
+## 🧩 Docker Compose
+
+Para simplificar o gerenciamento de múltiplos containers (API + Banco), foi criado um `compose.yaml`.
+
+Ele orquestra:
+
+* Container da API
+* Container do PostgreSQL
+* Rede interna entre serviços
+* Volume para persistência de dados
+
+### Subir ambiente completo:
+
+```bash
+docker compose up --build
+```
+
+---
+
+## 💾 Persistência de Dados
+
+Utilização de **volumes Docker** para garantir:
+
+* Persistência entre reinicializações
+* Isolamento de dados
+* Ambiente consistente
+
+---
+
+## 🔄 Migrações Automatizadas
+
+As migrações do Alembic são executadas automaticamente na inicialização do container, garantindo que o banco esteja sempre sincronizado com o modelo de dados.
+
+```bash
+alembic upgrade head
+```
+
+---
+
+## 🧪 Testes com Containers
+
+O projeto também suporta execução de testes utilizando banco de dados isolado em container.
+
+### Estratégia adotada:
+
+* Container dedicado para testes
+* Engine assíncrona separada
+* Fixtures específicas para sessão e engine
+* Banco descartável por execução
+
+Isso garante:
+
+* Isolamento total dos testes
+* Reprodutibilidade
+* Independência do ambiente local
+
+---
+
 ## 🧭 Roadmap
 
-* [x] CRUD completo
-* [x] Autenticação JWT
-* [x] Refresh Token
-* [x] Assincronismo completo
-* [x] Testes automatizados
-* [ ] Docker + PostgreSQL
-* [ ] CI/CD (GitHub Actions)
-* [ ] Deploy em ambiente cloud
-* [ ] Observabilidade (logs estruturados)
+- [x] CRUD completo  
+- [x] Autenticação JWT  
+- [x] Refresh Token  
+- [x] Assincronismo completo  
+- [x] Testes automatizados  
+- [x] Docker  
+- [x] PostgreSQL  
+- [x] Docker Compose  
+- [ ] CI/CD (GitHub Actions)  
+- [ ] Deploy em ambiente cloud  
+- [ ] Observabilidade (logs estruturados)
 
 ---
 
