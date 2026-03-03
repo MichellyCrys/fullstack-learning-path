@@ -1,55 +1,162 @@
-# 🏗️ Docker: Completo do Zero ao Avançado (Udemy)
+# 🐳 Docker Lab
 
-![Docker](https://img.shields.io/badge/docker-%232496ed.svg?style=flat&logo=docker&logoColor=white)
-![Docker Compose](https://img.shields.io/badge/docker%20compose-%232496ed.svg?style=flat&logo=docker&logoColor=white)
-![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
+![Docker](https://img.shields.io/badge/docker-containerized-2496ed?logo=docker)
+![Docker Compose](https://img.shields.io/badge/docker--compose-orchestration-2496ed?logo=docker)
+![Node.js](https://img.shields.io/badge/node.js-runtime-6DA55F?logo=node.js)
+![React](https://img.shields.io/badge/react-frontend-20232a?logo=react)
+![Linux](https://img.shields.io/badge/linux-environment-FCC624?logo=linux)
+![Status](https://img.shields.io/badge/status-active%20development-brightgreen)
 
-Este diretório contém os projetos e configurações desenvolvidos durante o curso prático de Docker. O foco foi aprender a conteinerizar aplicações, gerenciar imagens e orquestrar múltiplos serviços com **Docker Compose**.
+Ambiente de experimentação focado em containerização, orquestração de serviços e consolidação de práticas de infraestrutura utilizando Docker e Docker Compose.
 
----
-
-## 🚀 Projetos Desenvolvidos
-
-### 1. [Aplicação Node.js (App)](./app)
-Neste projeto inicial, pratiquei os fundamentos de criação de imagens e gerenciamento de containers.
-* **Dockerfile:** Criação de uma imagem personalizada baseada em Node.js.
-* **Versionamento:** Prática de builds com tags (ex: `app:v2`).
-* **Persistência:** Uso de volumes nomeados para persistir dados da aplicação.
-
-### 2. [Clone Netflix (Full Stack)](./netflix)
-Um projeto complexo utilizando **Docker Compose** para gerenciar a comunicação entre diferentes serviços.
-* **Backend:** API em Node.js com configurações de migração de banco de dados.
-* **Frontend:** Interface em React integrada ao ecossistema de containers.
-* **Orquestração:** Uso de um único arquivo `docker-compose.yml` para subir toda a stack de uma vez.
+Este diretório funciona como laboratório prático para construção de imagens, gerenciamento de containers, persistência de dados e execução de aplicações full stack em ambiente isolado.
 
 ---
 
-## 🛠️ Guia de Comandos Praticados
+# 🎯 Objetivo do Projeto
 
-### Gerenciamento de Containers e Imagens
-* `docker run -d app:v2`: Executa um container em modo background.
-* `docker ps -a`: Lista todos os containers (ativos e inativos).
-* `docker stop/start/rm`: Comandos para parar, iniciar e remover containers.
-* `docker cp kiwi2:/app/teste.txt .`: Copia arquivos entre o host e o container.
+Consolidar conhecimentos em:
 
-### Volumes e Redes
-* `docker volume inspect app-dados`: Inspeciona detalhes de um volume criado.
-* `docker run -d -p 3000:3000 --name kiwi2 -v app-dados:/app/dados app:v2`: Executa container com mapeamento de portas e montagem de volume.
-
-### Docker Compose (Orquestração)
-* `docker compose up`: Sobe todos os serviços definidos no arquivo YAML.
-* `docker compose up --build`: Força o rebuild das imagens antes de subir os serviços.
-* `docker compose down`: Para e remove todos os containers e redes criados pelo Compose.
+- Criação de imagens com Dockerfile
+- Gerenciamento de containers
+- Uso de volumes para persistência
+- Configuração de redes entre serviços
+- Orquestração com Docker Compose
+- Execução de aplicações full stack containerizadas
 
 ---
 
-## 💻 Tecnologias
-* **Docker Engine** & **Docker Desktop**
-* **Docker Compose** (Orquestração)
-* **Docker Hub** (Registro de Imagens)
-* **Node.js / React** (Bases das aplicações)
+# 🚀 Projetos Desenvolvidos
+
+## 🔹 [Aplicação Node.js](./app/)
+
+Projeto focado nos fundamentos de containerização.
+
+**Conceitos aplicados:**
+- Construção de imagem customizada
+- Versionamento com tags
+- Execução em modo detached
+- Persistência com volumes nomeados
 
 ---
-> *Desenvolvido durante o curso de Docker na Udemy.*
+
+## 🔹 [Clone Netflix (Full Stack)](./netflix/)
+
+Stack completa orquestrada com Docker Compose.
+
+**Arquitetura:**
+- Backend: Node.js
+- Frontend: React
+- Banco de dados
+- Comunicação via rede interna do Compose
+
+**Conceitos aplicados:**
+- Orquestração multi-serviço
+- Variáveis de ambiente
+- Mapeamento de portas
+- Build automático via `docker compose up --build`
+
+---
+
+# 🏗️ Arquitetura de Orquestração
+
+```mermaid
+flowchart LR
+
+    subgraph Frontend
+        A[React App]
+    end
+
+    subgraph Backend
+        B[Node API]
+    end
+
+    subgraph Database
+        C[(Database)]
+    end
+
+    subgraph Infra
+        D[Docker Compose]
+    end
+
+    A --> B
+    B --> C
+    D --> A
+    D --> B
+    D --> C
+```
+
+Fluxo:
+
+Usuário → Frontend → Backend → Banco
+Infraestrutura gerenciada via Docker Compose.
+
+---
+
+# 🛠️ Tecnologias Utilizadas
+
+### Containerização
+
+* Docker Engine
+* Docker Desktop
+* Docker Hub
+
+### Orquestração
+
+* Docker Compose
+
+### Aplicações Base
+
+* Node.js
+* React
+
+### Ambiente
+
+* Linux (ambiente containerizado)
+
+---
+
+# ⚙️ Comandos Essenciais Praticados
+
+### Containers e Imagens
+
+```bash
+docker run -d imagem:tag
+docker ps -a
+docker stop <container>
+docker rm -f <container>
+docker build -t nome:tag .
+```
+
+### Volumes
+
+```bash
+docker volume inspect nome-volume
+docker run -v volume:/app/dados imagem
+```
+
+### Docker Compose
+
+```bash
+docker compose up
+docker compose up --build
+docker compose down
+docker compose ps
+```
+
+---
+
+# ⚠️ Limitações Atuais
+
+* Sem pipeline CI/CD
+* Sem deploy em ambiente cloud
+* Sem monitoramento ou logs estruturados
+* Sem testes automatizados de integração
+
+---
+
+# 📈 Evolução Dentro do Learning Path
+
+Este laboratório representa a consolidação da camada de infraestrutura do repositório, permitindo que projetos backend e frontend sejam executados em ambientes reproduzíveis e prontos para produção.
+
+---
