@@ -1,90 +1,236 @@
-# 📚 Meus Cursos e Projetos (Alura, Udemy, Dunossauro)
+# 🚀 Fullstack Learning Path
 
-![Python Version](https://img.shields.io/badge/python-3.13%2B-blue?logo=python)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.115%2B-05998b?logo=fastapi)
+![Python](https://img.shields.io/badge/python-3.13%2B-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-async-05998b?logo=fastapi)
 ![Angular](https://img.shields.io/badge/Angular-v14--v18-dd0031?logo=angular)
-![Docker](https://img.shields.io/badge/Docker-Pro-2496ed?logo=docker)
+![Docker](https://img.shields.io/badge/Docker-containerized-2496ed?logo=docker)
+![Status](https://img.shields.io/badge/status-active%20development-brightgreen)
 
-Este repositório centraliza os projetos que desenvolvi durante minha jornada de aprendizado em **Backend, Frontend e DevOps**, focando em tecnologias como Python (Flask/FastAPI), Angular e Docker.
+Repositório estruturado para consolidar minha evolução como desenvolvedora **Fullstack**, aplicando conceitos de Backend, Frontend e DevOps em projetos progressivamente mais complexos.
 
----
-
-## 🖥️ Backend
-
-### [FastAPI do Zero (Em andamento)](./Backend/FastAPI/fastapi_zero/)
-**Curso:** *FastAPI do Zero 2025 (Dunossauro)*
-
-Construção de um gerenciador de tarefas robusto com foco em **TDD**, **Arquitetura Modular** e segurança.
-* **Destaques:** Uso de **APIRouter** para escalabilidade, injeção de dependência com **Annotated**, gestão de configurações via **Pydantic-Settings** (.env) e testes automatizados com **Pytest**.
-
-### [Bookstore API](./Backend/FastAPI/bookstore)
-**Curso:** *FastAPI em Python em 1 hora - Iniciante*
-
-API para gerenciamento de uma livraria, servindo como base sólida para sistemas de e-commerce e venda de produtos.
-* **Destaques:** Uso de Python Type Hints, validação com Pydantic e documentação automática via Swagger UI.
-
-### [Flask - Jogoteca](./Backend/Flask/jogoteca)
-**Curso:** *Flask: crie uma webapp com Python - Alura*
-
-Aplicação web para gerenciamento de uma lista de jogos com sistema de login e persistência.
-* **Destaques:** Definição de rotas dinâmicas, gerenciamento de sessões e templates Jinja2.
+O objetivo não é apenas acompanhar cursos, mas transformar cada projeto em um laboratório de engenharia com melhorias incrementais, boas práticas e documentação profissional.
 
 ---
 
-## 🎨 Frontend
+# 🎯 Estratégia de Evolução
 
-### [Indexa - Agenda de Contatos](./Frontend/angular/indexa)
-**Curso:** *Angular: construa uma aplicação web com componentes - Alura*
+Cada projeto neste repositório segue princípios consistentes:
 
-Projeto focado em funcionalidades modernas do Angular para manipulação de dados estruturados.
-* **Destaques:** Uso da nova sintaxe `@for` (Control Flow), componentes reutilizáveis e leitura de arquivos JSON locais.
+- Documentação estruturada
+- Roadmap evolutivo
+- Separação de responsabilidades
+- Aplicação prática de arquitetura
+- Evolução além do conteúdo base estudado
 
-### [Buscante - Acessibilidade no Angular](./Frontend/angular/acessibilidade-angular/a11y-buscante)
-**Curso:** *Acessibilidade no Angular: formulários, modais e rotas - Alura*
+A progressão ocorre em três pilares principais:
 
-Aplicação de busca de livros que prioriza a inclusão digital seguindo padrões WCAG e ARIA.
-* **Destaques:** Gerenciamento de foco (`focusTrap`), anúncios dinâmicos (`LiveAnnouncer`) e navegação semântica.
-
-### [Angular - Memoteca](./Frontend/angular/memoteca/)
-**Cursos:** *Angular 14: CRUD e Evolução da Aplicação (Alura)*
-
-Mural de pensamentos virtual que evoluiu de um CRUD básico para uma aplicação robusta com filtros e validações avançadas.
-* **Destaques:** Reactive Forms, Validações customizadas, Paginação e sistema de Favoritos.
-
-### [JS Orientação a Objetos](./Frontend/javascript/js-poo)
-**Curso:** *JavaScript: programando a Orientação a Objetos - Alura*
-
-Base fundamental de lógica e arquitetura para sistemas escaláveis em JavaScript.
-* **Destaques:** Classes, atributos privados, encapsulamento e composição de objetos.
+1. **Backend Engineering**
+2. **Frontend Engineering**
+3. **DevOps & Infraestrutura**
 
 ---
 
-## 🏗️ DevOps & Infraestrutura
+# 🏗️ Arquitetura Global
 
-### [Docker Completo do Zero ao Avançado (Udemy)](./DevOps/docker)
-**Curso:** *DOCKER Completo do Zero ao Avançado - Udemy*
+```mermaid
+flowchart LR
 
-Neste curso, aprendi a construir, testar e implementar containers do zero ao avançado, utilizando o Docker Compose para orquestrar aplicações Full Stack.
+    subgraph Frontend
+        A[Angular Applications]
+    end
 
-**O que foi desenvolvido/aprendido:**
-* **Orquestração:** Criação de arquivos `docker-compose.yml` para rodar múltiplos serviços simultaneamente.
-* **Persistência de Dados:** Uso de volumes para garantir a durabilidade dos dados.
-* **Redes:** Comunicação entre containers e isolamento de ambientes.
+    subgraph Backend
+        B1[FastAPI APIs]
+        B2[Flask Applications]
+    end
 
-#### 📝 Comandos Úteis Praticados:
-* **Gerenciamento:** `docker run -d`, `docker ps -a`, `docker stop`, `docker rm -f`.
-* **Volumes/Arquivos:** `docker volume inspect`, `docker cp`.
-* **Docker Compose:** `docker compose up --build`, `docker compose ps`, `docker compose down`.
+    subgraph Database
+        C[(PostgreSQL)]
+    end
+
+    subgraph Infra
+        D[Docker / Docker Compose]
+    end
+
+    A --> B1
+    A --> B2
+    B1 --> C
+    B2 --> C
+    D --> A
+    D --> B1
+    D --> B2
+    D --> C
+```
+---
+
+# 🖥️ Backend
+
+## 🔹 FastAPI Zero
+📁 `Backend/FastAPI/fastapi_zero`
+
+API assíncrona construída com foco em arquitetura modular, TDD e boas práticas de segurança.
+
+**Conceitos aplicados:**
+- APIRouter para modularização
+- Injeção de dependência com `Annotated`
+- Configuração via `Pydantic-Settings`
+- Autenticação JWT
+- Testes automatizados com Pytest
+- PostgreSQL + Alembic
+- Docker e Docker Compose
+
+🔄 Projeto em evolução contínua.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🔹 Bookstore API
+📁 `Backend/FastAPI/bookstore`
 
-* **Linguagens:** Python, TypeScript, JavaScript, HTML, CSS.
-* **Frameworks/Bibliotecas:** FastAPI, Flask, Angular (v14-v18), Angular CDK.
-* **Persistência/ORM:** SQLAlchemy, Alembic, Prisma ORM.
-* **Padrões e Práticas:** Acessibilidade Web (WCAG), TDD, POO, Mobile First.
-* **Ferramentas:** Git, GitHub, Angular CLI, Docker & Docker Compose, Poetry, Taskipy.
+API REST para gerenciamento de livros, com foco em fundamentos da construção de serviços HTTP.
+
+**Conceitos aplicados:**
+- Type Hints
+- Validação com Pydantic
+- Documentação automática (Swagger/OpenAPI)
+- Estruturação básica de rotas
 
 ---
-Desenvolvido por **Michelly Crystiane**.
+
+## 🔹 Jogoteca (Flask)
+📁 `Backend/Flask/jogoteca`
+
+Aplicação web server-side com autenticação baseada em sessão e renderização via Jinja2.
+
+**Conceitos aplicados:**
+- Rotas dinâmicas
+- Templates com herança
+- Controle de sessão
+- Flash messages
+- Organização MVC simplificada
+
+---
+
+# 🎨 Frontend
+
+## 🔹 Indexa (Angular)
+📁 `Frontend/angular/indexa`
+
+Aplicação de agenda de contatos utilizando recursos modernos do Angular.
+
+**Conceitos aplicados:**
+- Nova sintaxe de Control Flow (`@for`)
+- Componentização
+- Manipulação de dados JSON
+- Estrutura modular
+
+---
+
+## 🔹 Buscante (Acessibilidade)
+📁 `Frontend/angular/acessibilidade-angular/a11y-buscante`
+
+Projeto com foco em inclusão digital e acessibilidade.
+
+**Conceitos aplicados:**
+- WCAG
+- ARIA
+- `focusTrap`
+- `LiveAnnouncer`
+- Navegação semântica
+
+---
+
+## 🔹 Memoteca
+📁 `Frontend/angular/memoteca`
+
+CRUD evolutivo em Angular com foco em validações e experiência do usuário.
+
+**Conceitos aplicados:**
+- Reactive Forms
+- Validações customizadas
+- Paginação
+- Filtros
+- Favoritos
+
+---
+
+## 🔹 JavaScript OO
+📁 `Frontend/javascript/js-poo`
+
+Fundamentos de Programação Orientada a Objetos aplicados em JavaScript.
+
+**Conceitos aplicados:**
+- Classes
+- Encapsulamento
+- Atributos privados
+- Composição
+
+---
+
+# 🏗️ DevOps & Infraestrutura
+
+## 🔹 Docker Lab
+📁 `DevOps/docker`
+
+Ambiente de experimentação e consolidação de conceitos de containerização.
+
+**Conceitos aplicados:**
+- Dockerfile
+- Docker Compose
+- Orquestração de múltiplos serviços
+- Volumes para persistência
+- Redes entre containers
+- Ciclo de build → run → teardown
+
+---
+
+# 🛠️ Stack Tecnológica
+
+### Linguagens
+- Python
+- TypeScript
+- JavaScript
+- HTML / CSS
+
+### Backend
+- FastAPI
+- Flask
+- SQLAlchemy
+- Alembic
+
+### Frontend
+- Angular (v14–v18)
+- Angular CDK
+
+### DevOps
+- Docker
+- Docker Compose
+
+### Ferramentas
+- Git & GitHub
+- Poetry
+- Taskipy
+- Pytest
+
+---
+
+# 🧭 Roadmap Global
+
+- [x] APIs REST síncronas
+- [x] APIs assíncronas
+- [x] Autenticação JWT
+- [x] PostgreSQL
+- [x] Docker
+- [ ] CI/CD (GitHub Actions)
+- [ ] Deploy Cloud
+- [ ] Observabilidade e logs estruturados
+- [ ] Integração Fullstack (Frontend + Backend em produção)
+
+---
+
+# 📈 Objetivo Profissional
+
+Este repositório representa minha evolução técnica estruturada, consolidando conhecimentos práticos e ampliando cada projeto com melhorias arquiteturais e boas práticas de engenharia.
+
+---
+
+Desenvolvido por **Michelly Crystiane**
