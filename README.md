@@ -65,7 +65,7 @@ flowchart LR
 
 # 🖥️ Backend
 
-## 🔹 FastAPI Zero
+## 🔹 [FastAPI Zero](./Backend/FastAPI/fastapi_zero/)
 📁 `Backend/FastAPI/fastapi_zero`
 
 API assíncrona construída com foco em arquitetura modular, TDD e boas práticas de segurança.
@@ -83,7 +83,7 @@ API assíncrona construída com foco em arquitetura modular, TDD e boas prática
 
 ---
 
-## 🔹 Bookstore API
+## 🔹[Bookstore API](./Backend/FastAPI/bookstore)
 📁 `Backend/FastAPI/bookstore`
 
 API REST para gerenciamento de livros, com foco em fundamentos da construção de serviços HTTP.
@@ -96,7 +96,7 @@ API REST para gerenciamento de livros, com foco em fundamentos da construção d
 
 ---
 
-## 🔹 Jogoteca (Flask)
+## 🔹 [Jogoteca - Flask](./Backend/Flask/jogoteca/)
 📁 `Backend/Flask/jogoteca`
 
 Aplicação web server-side com autenticação baseada em sessão e renderização via Jinja2.
@@ -112,7 +112,7 @@ Aplicação web server-side com autenticação baseada em sessão e renderizaç�
 
 # 🎨 Frontend
 
-## 🔹 Indexa (Angular)
+## 🔹 [Indexa - Angular](./Frontend/angular/indexa/)
 📁 `Frontend/angular/indexa`
 
 Aplicação de agenda de contatos utilizando recursos modernos do Angular.
@@ -125,7 +125,7 @@ Aplicação de agenda de contatos utilizando recursos modernos do Angular.
 
 ---
 
-## 🔹 Buscante (Acessibilidade)
+## 🔹 [Buscante - Acessibilidade](./Frontend/angular/acessibilidade-angular/a11y-buscante)
 📁 `Frontend/angular/acessibilidade-angular/a11y-buscante`
 
 Projeto com foco em inclusão digital e acessibilidade.
@@ -139,7 +139,7 @@ Projeto com foco em inclusão digital e acessibilidade.
 
 ---
 
-## 🔹 Memoteca
+## 🔹 [Memoteca - Angula](./Frontend/angular/memoteca/)
 📁 `Frontend/angular/memoteca`
 
 CRUD evolutivo em Angular com foco em validações e experiência do usuário.
@@ -153,7 +153,7 @@ CRUD evolutivo em Angular com foco em validações e experiência do usuário.
 
 ---
 
-## 🔹 JavaScript OO
+## 🔹 [JavaScript OO](./Frontend/javascript/js-poo/)
 📁 `Frontend/javascript/js-poo`
 
 Fundamentos de Programação Orientada a Objetos aplicados em JavaScript.
@@ -168,7 +168,7 @@ Fundamentos de Programação Orientada a Objetos aplicados em JavaScript.
 
 # 🏗️ DevOps & Infraestrutura
 
-## 🔹 Docker Lab
+## 🔹 [Docker Lab](./DevOps/docker/)
 📁 `DevOps/docker`
 
 Ambiente de experimentação e consolidação de conceitos de containerização.
