@@ -59,5 +59,6 @@ class TodoPublic(TodoSchema):
     created_at: datetime
     updated_at: datetime
 
+
 class TodoList(BaseModel):
     todos: list[TodoPublic]

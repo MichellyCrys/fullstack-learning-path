@@ -3,7 +3,7 @@ from http import HTTPStatus
 import factory
 import factory.fuzzy
 import pytest
-from sqlalchemy import select
+from sqlalchemy.exc import DataError
 
 from fastapi_zero.models import Todo, TodoState, User
 
@@ -36,7 +36,7 @@ def test_create_todo(client, token, mock_db_time):
         'description': 'Test todo description',
         'state': 'draft',
         'created_at': time.isoformat(),
-        'updated_at': time.isoformat()
+        'updated_at': time.isoformat(),
     }
 
 
@@ -207,14 +207,16 @@ async def test_list_todos_should_return_all_expected_fields__exercicio(
         headers={'Authorization': f'Bearer {token}'},
     )
 
-    assert response.json()['todos'] == [{
-        'created_at': time.isoformat(),
-        'updated_at': time.isoformat(),
-        'description': todo.description,
-        'id': todo.id,
-        'state': todo.state,
-        'title': todo.title,
-    }]
+    assert response.json()['todos'] == [
+        {
+            'created_at': time.isoformat(),
+            'updated_at': time.isoformat(),
+            'description': todo.description,
+            'id': todo.id,
+            'state': todo.state,
+            'title': todo.title,
+        }
+    ]
 
 
 @pytest.mark.asyncio
@@ -227,7 +229,6 @@ async def test_create_todo_error(session, user: User):
     )
 
     session.add(todo)
-    await session.commit()
 
-    with pytest.raises(LookupError):
-        await session.scalar(select(Todo))
+    with pytest.raises(DataError):
+        await session.commit()
