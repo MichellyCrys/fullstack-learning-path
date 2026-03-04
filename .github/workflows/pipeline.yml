@@ -5,10 +5,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: Backend/FastAPI/fastapi_zero
+
     steps:
       - name: Copia os arquivos do repositório
         uses: actions/checkout@v4
-        
+
       - name: Instalar o python
         uses: actions/setup-python@v5
         with:
