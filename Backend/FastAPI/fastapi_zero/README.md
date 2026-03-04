@@ -337,8 +337,7 @@ Isso garante:
 - [x] PostgreSQL  
 - [x] Docker Compose  
 - [ ] CI/CD (GitHub Actions)  
-- [ ] Deploy em ambiente cloud  
-- [ ] Observabilidade (logs estruturados)
+- [ ] Deploy em ambiente no Fly.io
 
 ---
 
