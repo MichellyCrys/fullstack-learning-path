@@ -1,63 +1,96 @@
-# ☕ JavaScript: Programação Orientada a Objetos
+# ☕ JS Banking Domain — Object-Oriented Modeling
 
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat\&logo=javascript\&logoColor=%23F7DF1E)
-![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=flat\&logo=node.js\&logoColor=white)
-![ES6+](https://img.shields.io/badge/ES6%2B-Modern-orange)
-![OOP](https://img.shields.io/badge/Paradigm-OOP-blue)
+![JavaScript](https://img.shields.io/badge/javascript-es6%2B-F7DF1E?logo=javascript)
+![Node.js](https://img.shields.io/badge/node.js-runtime-6DA55F?logo=node.js)
+![OOP](https://img.shields.io/badge/paradigm-object--oriented-blue)
+![Status](https://img.shields.io/badge/status-stable-blue)
 
-Este projeto foi desenvolvido como parte do aprofundamento no paradigma de **Programação Orientada a Objetos (POO)** com JavaScript moderno (ES6+).
+Projeto de modelagem de domínio utilizando Programação Orientada a Objetos com JavaScript moderno (ES6+) no ambiente Node.js.
 
-O objetivo foi aplicar os princípios fundamentais da orientação a objetos na modelagem de um domínio bancário simplificado, enfatizando **encapsulamento, modularização e separação de responsabilidades**.
-
----
-
-## 🎯 Objetivos Técnicos
-
-* Modelar entidades do domínio utilizando classes
-* Aplicar encapsulamento com atributos privados (`#`)
-* Separar responsabilidades entre entidades
-* Utilizar ES Modules no ambiente Node.js
-* Simular regras de negócio com validação de estado interno
+A aplicação simula um sistema bancário simplificado com foco em encapsulamento, integridade de estado e separação de responsabilidades.
 
 ---
 
-## 🧠 Conceitos Aplicados
+# 🎯 Objetivo do Projeto
 
-### 1️⃣ Classes e Instâncias
+Demonstrar fundamentos sólidos de design orientado a objetos aplicados a um domínio realista:
 
-Definição de moldes para objetos complexos como `Cliente` e `ContaCorrente`, garantindo organização e previsibilidade na criação de instâncias.
+- Modelagem de entidades
+- Encapsulamento com campos privados (`#`)
+- Validação de regras de negócio
+- Composição entre objetos
+- Modularização com ES Modules
 
-### 2️⃣ Encapsulamento
+---
 
-Uso de atributos privados (`#saldo`, por exemplo) para proteger o estado interno da classe, evitando manipulação externa indevida.
+# 🏗️ Modelagem de Domínio
+
+O domínio representa um sistema bancário simplificado composto por:
+
+- Cliente
+- ContaCorrente
+
+## Relacionamento
+
+Uma `ContaCorrente` possui um `Cliente` como titular, representando composição entre entidades.
+
+```mermaid
+classDiagram
+
+class Cliente {
+  +nome
+  +cpf
+}
+
+class ContaCorrente {
+  -#saldo
+  +depositar(valor)
+  +sacar(valor)
+  +transferir(valor, contaDestino)
+}
+
+ContaCorrente --> Cliente
+```
+
+---
+
+# 🧠 Conceitos Aplicados
+
+## Encapsulamento
+
+Uso de campos privados para proteger estado interno:
 
 ```js
 #saldo = 0;
 ```
 
-Isso assegura integridade dos dados e reforça boas práticas de design orientado a objetos.
-
-### 3️⃣ Construtores
-
-Padronização da criação de objetos com atributos obrigatórios no momento da instanciação.
-
-### 4️⃣ Métodos e Regras de Negócio
-
-Implementação de comportamentos como:
-
-* `depositar(valor)`
-* `sacar(valor)`
-* `transferir(valor, contaDestino)`
-
-Cada método valida regras antes de alterar o estado interno.
-
-### 5️⃣ Composição de Objetos
-
-Uma `ContaCorrente` possui um `Cliente`, simulando relacionamento real entre entidades do domínio.
+A manipulação do saldo ocorre exclusivamente por métodos controlados.
 
 ---
 
-## 🏗️ Estrutura do Projeto
+## Regras de Negócio
+
+Cada operação valida o estado antes de modificá-lo:
+
+* `depositar(valor)` → aceita apenas valores positivos
+* `sacar(valor)` → verifica saldo disponível
+* `transferir(valor, contaDestino)` → valida origem e destino
+
+Isso impede inconsistências e reforça integridade do modelo.
+
+---
+
+## Modularização
+
+Uso de ES Modules:
+
+* Separação clara entre entidades
+* Import/export explícitos
+* Organização coesa por responsabilidade
+
+---
+
+# 📂 Estrutura do Projeto
 
 ```
 js-poo/
@@ -67,31 +100,26 @@ js-poo/
 └── index.js
 ```
 
-* **Cliente.js** → Representa dados de identificação do titular.
-* **ContaCorrente.js** → Centraliza regras bancárias e controle de saldo.
-* **index.js** → Responsável por instanciar objetos e executar operações.
+* **Cliente.js** → Entidade de identificação
+* **ContaCorrente.js** → Regras bancárias e controle de estado
+* **index.js** → Execução e simulação de operações
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+# 🛠️ Tecnologias Utilizadas
 
-* **Linguagem:** JavaScript (ES6+)
-* **Runtime:** Node.js
-* **Paradigma:** Programação Orientada a Objetos
+* JavaScript (ES6+)
+* Node.js
+* ES Modules
+* Paradigma Orientado a Objetos
 
 ---
 
-## ▶️ Como Executar
+# ▶️ Como Executar
 
-O projeto utiliza **ES Modules** (configuração `"type": "module"` no `package.json`).
+O projeto utiliza `"type": "module"` no `package.json`.
 
-1️⃣ Navegue até o diretório do projeto:
-
-```bash
-cd Frontend/javascript/js-poo
-```
-
-2️⃣ Execute:
+Executar:
 
 ```bash
 node index.js
@@ -99,15 +127,17 @@ node index.js
 
 ---
 
-## 📚 Aprendizados Relevantes
+# 📈 Papel Dentro do Ecossistema
 
-* Diferença entre propriedades públicas e privadas em JS moderno
-* Importância da modelagem antes da implementação
-* Organização modular com ES Modules
-* Simulação de regras de negócio de forma orientada a objetos
+Este projeto representa a base conceitual de modelagem orientada a objetos dentro do ecossistema do repositório.
 
----
+Enquanto os projetos Angular demonstram arquitetura de interface e consumo de API, este projeto reforça fundamentos de:
 
-> Projeto desenvolvido durante o curso **JavaScript: Programação Orientada a Objetos** (Alura), com adaptações e melhorias próprias para reforço de aprendizado.
+* Design de classes
+* Integridade de estado
+* Organização modular
+* Simulação de regras de negócio
+
+Ele serve como base conceitual para aplicações backend mais complexas.
 
 ---
