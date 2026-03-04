@@ -1,246 +1,163 @@
 # 🚀 FastAPI do Zero
 
-![Python Version](https://img.shields.io/badge/python-3.13%2B-blue?logo=python)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.115%2B-05998b?logo=fastapi)
-![Security](https://img.shields.io/badge/Security-JWT%20%26%20Refresh%20Token-red)
-![Poetry](https://img.shields.io/badge/Packaging-Poetry-blue?logo=poetry)
-![Ruff](https://img.shields.io/badge/Linter-Ruff-orange)
-![Asynchronous](https://img.shields.io/badge/AsyncIO-Supported-blueviolet)
-![SQLAlchemy](https://img.shields.io/badge/ORM-SQLAlchemy%20Async-red)
-![Tests](https://img.shields.io/badge/Tests-FactoryBoy%20%26%20FreezeGun-yellow?logo=pytest)
-![TDD](https://img.shields.io/badge/Tests-Pytest-yellow?logo=pytest)
+![Python](https://img.shields.io/badge/python-3.13%2B-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-async-05998b?logo=fastapi)
+![PostgreSQL](https://img.shields.io/badge/database-postgresql-316192?logo=postgresql)
+![Docker](https://img.shields.io/badge/container-docker-2496ed?logo=docker)
+![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?logo=githubactions)
+![Tests](https://img.shields.io/badge/tests-pytest-yellow?logo=pytest)
+![Status](https://img.shields.io/badge/status-production--ready-brightgreen)
+
+API REST assíncrona desenvolvida com **FastAPI**, projetada com foco em arquitetura limpa, segurança robusta, testes automatizados e deploy em ambiente real.
+
+Este projeto representa um backend completo pronto para produção.
 
 ---
 
-## 📌 Overview
+# 🎯 Objetivo
 
-**FastAPI Zero** é uma API RESTful moderna, assíncrona e segura, projetada com foco em:
+Construir uma API moderna aplicando práticas reais de engenharia de software:
 
-- Arquitetura modular e desacoplada  
-- Segurança baseada em JWT com Refresh Token  
-- Persistência assíncrona com SQLAlchemy 2.0  
-- Testes automatizados com alta cobertura  
-- Boas práticas de engenharia (12-Factor App)  
-
-O projeto foi desenvolvido como parte da minha trilha de especialização em backend dentro do repositório `fullstack-learning-path`, com objetivo de simular padrões utilizados em ambientes de produção.
+* Arquitetura modular
+* Assincronismo completo
+* Autenticação JWT com Refresh Token
+* Testes automatizados
+* CI/CD
+* Containerização
+* Banco relacional em produção
 
 ---
 
-## 🏗 Arquitetura do Sistema
+# 🏗 Arquitetura
 
-A aplicação segue uma arquitetura modular orientada a domínio, separando responsabilidades de forma clara:
+Estrutura modular orientada a domínio:
 
-```bash
+```
 fastapi_zero/
 │
 ├── fastapi_zero/
-│   ├── routers/         # Camada de apresentação (routers)
+│   ├── routers/
 │   ├── app.py
 │   ├── database.py
-│   ├── models.py      # Modelos ORM (SQLAlchemy)
-│   ├── schemas.py     # DTOs e validação (Pydantic v2)
-│   ├── security.py         
-│   └── settings.py 
+│   ├── models.py 
+│   ├── schemas.py
+│   ├── security.py
+│   └── settings.py
 │
-├── tests/           # Testes automatizados
-└── migrations/         # Controle de migrações
+├── migrations/
+├── tests/
+├── compose.yaml
+├── Dockerfile
+├── entrypoint.sh
+└── pyproject.toml
 ```
 
-### Princípios aplicados
+## Princípios Aplicados
 
-- Separação de responsabilidades  
-- Injeção de dependências com `Annotated`  
-- Configuração via variáveis de ambiente  
-- Código orientado a testes  
-- Arquitetura preparada para escalabilidade horizontal  
-
----
-
-## ⚡ Arquitetura Assíncrona
-
-A API é **totalmente não bloqueante**, permitindo melhor escalabilidade sob concorrência.
-
-- `async def` em todos os endpoints  
-- `AsyncSession` (SQLAlchemy 2.0)  
-- Driver `aiosqlite`  
-- `pytest-asyncio` para testes assíncronos  
-- Ajustes no Alembic para engine async  
-
-Essa abordagem elimina bloqueios de I/O durante operações de banco de dados.
+* Separação de responsabilidades
+* Injeção de dependência com `Annotated`
+* Configuração via variáveis de ambiente
+* Arquitetura stateless
+* Preparado para escalabilidade horizontal
 
 ---
 
-## 🔐 Segurança
+# ⚡ Assincronismo
 
-A autenticação é baseada no padrão **JWT (RFC 7519)** com estratégia moderna de renovação de sessão.
+* `async def` em todos endpoints
+* `AsyncSession` (SQLAlchemy 2.0)
+* Driver `asyncpg`
+* Testes com `pytest-asyncio`
 
-### Implementado
-
-- Access Token com curta duração  
-- Refresh Token para renovação segura  
-- Hash de senha com **Argon2**  
-- Autorização baseada em dono do recurso (Owner-only)  
-- Tratamento explícito de:
-  - Token expirado  
-  - Token inválido  
-  - Acesso não autorizado (401)  
-  - Acesso proibido (403)  
-
-### Decisões técnicas
-
-- **Argon2** → algoritmo moderno resistente a ataques de força bruta  
-- **JWT Stateless** → escalabilidade horizontal sem armazenamento de sessão  
-- **Refresh Token** → melhor experiência do usuário sem comprometer segurança  
+Resultado: I/O não bloqueante e melhor desempenho sob concorrência.
 
 ---
 
-## 🗄 Modelagem de Dados
-Relacionamento principal:
+# 🔐 Segurança
 
-```bash
-User (1) —— (N) Todo
+Autenticação baseada em JWT (RFC 7519).
+
+## Implementado
+
+* Access Token (curta duração)
+* Refresh Token
+* Hash com Argon2
+* Proteção owner-only
+* Tratamento de 401 e 403
+
+## Decisões Técnicas
+
+* JWT stateless para escalabilidade
+* Refresh Token para melhor UX
+* Hash moderno resistente a brute force
+
+---
+
+# 🗄 Banco de Dados
+
+Banco principal: **PostgreSQL**
+
+Relacionamento:
+
 ```
----
+User (1) ---- (N) Todo
+```
 
-### Características
+Características:
 
-- Relação 1:N com `delete-orphan`  
-- Cascade delete configurado  
-- Enum tipado para estados (`draft`, `todo`, `doing`, `done`, `trash`)  
-- Paginação via `limit` e `offset`  
-- Filtros dinâmicos com `.contains()`  
-- Patch parcial com `model_dump(exclude_unset=True)`  
-
----
-
-## 🧪 Estratégia de Testes
-
-A aplicação possui suíte de testes cobrindo:
-
-- Fluxos principais (happy path)  
-- Casos adversos (edge cases)  
-- Conflitos de dados (409)  
-- Autorização indevida (403)  
-- Expiração de token (simulada com `freezegun`)  
-- Tokens inválidos ou manipulados  
-
-### Ferramentas
-
-- Pytest  
-- Pytest-asyncio  
-- Factory Boy  
-- Freezegun  
-- Coverage  
-
-### Abordagem
-
-- Uso de factories para isolamento de dados  
-- Fixtures assíncronas  
-- Testes desacoplados da implementação interna  
-- Geração automática de relatório HTML de cobertura  
+* Cascade delete
+* delete-orphan
+* Enum tipado
+* Paginação com limit/offset
+* Filtros dinâmicos
+* Patch parcial seguro
 
 ---
 
-## 🛠 Stack Tecnológica
+# 🧪 Testes Automatizados
 
-### Core
+Cobertura ampla incluindo:
 
-* Python 3.13+
-* FastAPI
-* Pydantic v2
+* Happy path
+* Edge cases
+* Token expirado (Freezegun)
+* Conflitos 409
+* Acesso indevido 403
 
-### Banco de Dados
+Ferramentas:
 
-* SQLAlchemy 2.0 (Async)
-* Alembic
-
-### Segurança
-
-* PyJWT
-* pwdlib (Argon2)
-
-### Dev Experience
-
-* Poetry
-* Ruff
-* Taskipy
 * Pytest
 * Factory Boy
+* Freezegun
+* Coverage
+
+Estratégia:
+
+* Factories isoladas
+* Banco descartável
+* Testes desacoplados da implementação
 
 ---
 
-## ⚙️ Setup do Ambiente
+# 🔁 Integração Contínua
 
-### 1️⃣ Instalar dependências
+Pipeline automatizado com **GitHub Actions**.
 
-```bash
-poetry install
-```
+A cada push:
 
-### 2️⃣ Criar arquivo `.env`
-
-Baseie-se no `.env.example`.
-
-### 3️⃣ Ativar ambiente
-
-```bash
-poetry shell
-```
-
-### 4️⃣ Rodar migrações
-
-```bash
-alembic upgrade head
-```
-
-### 5️⃣ Iniciar servidor
-
-```bash
-task run
-```
+* Instala dependências
+* Executa lint
+* Roda testes
+* Gera coverage
+* Falha se qualquer etapa quebrar
 
 ---
 
-## 🧪 Executar Testes
+# 🐳 Containerização
 
-```bash
-task test
-```
+A aplicação é totalmente containerizada com **Docker**.
 
-| Comando       | Descrição                  |
-| ------------- | -------------------------- |
-| `task lint`   | Análise estática do código |
-| `task format` | Formatação automática      |
-| `task run`    | Executa a API              |
-| `task test`   | Executa testes + coverage  |
-
----
-
-## 🐳 Containerização e PostgreSQL
-
-A aplicação foi containerizada utilizando Docker, permitindo:
-
-- Ambiente reproduzível
-- Isolamento de dependências
-- Facilidade de deploy
-- Padronização entre desenvolvimento e produção
-
-Além disso, migramos do SQLite para **PostgreSQL**, tornando a aplicação mais adequada para ambientes reais.
-
----
-
-## 📦 Dockerfile
-
-A aplicação possui um `Dockerfile` responsável por:
-
-- Definir a imagem base Python
-- Instalar dependências via Poetry
-- Copiar o código da aplicação
-- Configurar variáveis de ambiente
-- Expor a porta da API
-- Definir o comando de inicialização
-
-Isso garante que qualquer ambiente consiga executar a aplicação com apenas:
+## Build manual
 
 ```bash
 docker build -t fastapi-zero .
@@ -249,37 +166,16 @@ docker run -p 8000:8000 fastapi-zero
 
 ---
 
-## 🐘 PostgreSQL
+# 🧩 Docker Compose
 
-A aplicação agora utiliza **PostgreSQL** como banco principal.
+Orquestra:
 
-### Motivos da migração:
+* API
+* PostgreSQL
+* Rede interna
+* Volume persistente
 
-* Melhor suporte a concorrência
-* Confiabilidade em produção
-* Suporte avançado a índices e queries complexas
-* Compatibilidade com ambientes cloud
-
-A configuração é feita via variáveis de ambiente:
-
-```env
-DATABASE_URL=postgresql+asyncpg://user:password@db:5432/database
-```
-
----
-
-## 🧩 Docker Compose
-
-Para simplificar o gerenciamento de múltiplos containers (API + Banco), foi criado um `compose.yaml`.
-
-Ele orquestra:
-
-* Container da API
-* Container do PostgreSQL
-* Rede interna entre serviços
-* Volume para persistência de dados
-
-### Subir ambiente completo:
+Executar ambiente completo:
 
 ```bash
 docker compose up --build
@@ -287,87 +183,109 @@ docker compose up --build
 
 ---
 
-## 💾 Persistência de Dados
+# 🚀 Deploy em Produção
 
-Utilização de **volumes Docker** para garantir:
+Deploy realizado na plataforma **Fly.io**.
 
-* Persistência entre reinicializações
-* Isolamento de dados
-* Ambiente consistente
+## Estratégia
+
+* Build via Docker
+* Banco gerenciado Fly Postgres
+* Variáveis via secrets
+* Migrações automáticas
 
 ---
 
-## 🔄 Migrações Automatizadas
+# 🔄 Migrações
 
-As migrações do Alembic são executadas automaticamente na inicialização do container, garantindo que o banco esteja sempre sincronizado com o modelo de dados.
+Controle via Alembic:
 
 ```bash
 alembic upgrade head
 ```
 
----
-
-## 🧪 Testes com Containers
-
-O projeto também suporta execução de testes utilizando banco de dados isolado em container.
-
-### Estratégia adotada:
-
-* Container dedicado para testes
-* Engine assíncrona separada
-* Fixtures específicas para sessão e engine
-* Banco descartável por execução
-
-Isso garante:
-
-* Isolamento total dos testes
-* Reprodutibilidade
-* Independência do ambiente local
+Executado automaticamente no container de produção.
 
 ---
 
-## 🧭 Roadmap
+# ⚙️ Setup Local
 
-- [x] CRUD completo  
-- [x] Autenticação JWT  
-- [x] Refresh Token  
-- [x] Assincronismo completo  
-- [x] Testes automatizados  
-- [x] Docker  
-- [x] PostgreSQL  
-- [x] Docker Compose  
-- [ ] CI/CD (GitHub Actions)  
-- [ ] Deploy em ambiente no Fly.io
+### Instalar dependências
+
+```bash
+poetry install
+```
+
+### Criar `.env`
+
+Baseado em `.env.example`
+
+### Rodar migrações
+
+```bash
+alembic upgrade head
+```
+
+### Executar API
+
+```bash
+task run
+```
 
 ---
 
-## 💡 Decisões Arquiteturais
+# 🧪 Executar Testes
 
-* Uso de SQLAlchemy Async para evitar blocking I/O
-* Separação entre camada HTTP e lógica de negócio
-* Configuração baseada em ambiente (12-Factor App)
-* Sistema stateless para facilitar deploy em múltiplas instâncias
-* Uso de factories para evitar dependência entre testes
+```bash
+task test
+```
 
 ---
 
-## 🎯 Objetivo do Projeto
+# 🧭 Roadmap Concluído
 
-Este projeto foi desenvolvido como parte da minha evolução técnica em backend, com foco em:
+* [x] CRUD completo
+* [x] Autenticação JWT
+* [x] Refresh Token
+* [x] Assincronismo total
+* [x] Testes automatizados
+* [x] Coverage
+* [x] Docker
+* [x] PostgreSQL
+* [x] Docker Compose
+* [x] CI
+* [x] Deploy real
 
-* Projetar APIs escaláveis
-* Aplicar boas práticas modernas
-* Trabalhar com autenticação robusta
-* Implementar arquitetura orientada a produção
-* Desenvolver código testável e sustentável
+---
+
+# 🧠 Decisões Arquiteturais
+
+* SQLAlchemy Async para evitar blocking I/O
+* Stateless auth
+* Configuração baseada em ambiente
+* Separação clara entre HTTP e domínio
+* Testes como primeiro cidadão
+
+---
+
+# 📈 Papel no Ecossistema
+
+Este projeto é o backend âncora do repositório fullstack-learning-path.
+
+Ele demonstra:
+
+* Engenharia backend moderna
+* Arquitetura escalável
+* Segurança robusta
+* Pipeline automatizado
+* Deploy real em nuvem
 
 ---
 
 # 🔥 Resultado
 
-FastAPI Zero não é apenas um CRUD —
-é uma API estruturada com padrões de engenharia aplicáveis em ambientes reais.
+FastAPI Zero não é apenas um CRUD.
+
+É uma API production-ready com arquitetura profissional, testes automatizados e deploy contínuo.
 
 ---
-
-
