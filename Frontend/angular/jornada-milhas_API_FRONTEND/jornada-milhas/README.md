@@ -3,7 +3,7 @@
 ![Angular](https://img.shields.io/badge/angular-16-red?logo=angular)
 ![Angular Material](https://img.shields.io/badge/angular--material-ui-blue?logo=angular)
 ![TypeScript](https://img.shields.io/badge/typescript-5-blue?logo=typescript)
-![Status](https://img.shields.io/badge/status-concluído-brightgreen)
+![Status](https://img.shields.io/badge/status-em%20progresso-yellow)
 
 Aplicação frontend desenvolvida com **Angular** com foco em **componentização, organização de interface e reutilização de código**, utilizando a biblioteca de UI **Angular Material**.
 
