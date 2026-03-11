@@ -1,6 +1,6 @@
 # 📈 Evolução do Projeto na Trilha
 
-Este projeto faz parte da trilha **“Desenvolva Aplicações Escaláveis com Angular”**, onde a aplicação **Jornada Milhas** evolui gradualmente ao longo dos **8 cursos**.
+Este projeto faz parte da trilha **“Desenvolva Aplicações Escaláveis com Angular”**, onde a aplicação **Jornada Milhas** evolui gradualmente ao longo dos **5 cursos**.
 
 ## Curso 1
 
