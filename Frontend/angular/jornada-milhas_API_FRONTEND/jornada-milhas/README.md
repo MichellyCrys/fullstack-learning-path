@@ -1,183 +1,106 @@
-# ✈️ Angular: Componentização e Design com Angular Material
+# 📈 Evolução do Projeto na Trilha
 
-![Angular](https://img.shields.io/badge/angular-16-red?logo=angular)
-![Angular Material](https://img.shields.io/badge/angular--material-ui-blue?logo=angular)
-![TypeScript](https://img.shields.io/badge/typescript-5-blue?logo=typescript)
-![Status](https://img.shields.io/badge/status-em%20progresso-yellow)
+Este projeto faz parte da trilha **“Desenvolva Aplicações Escaláveis com Angular”**, onde a aplicação **Jornada Milhas** evolui gradualmente ao longo dos **8 cursos**.
 
-Aplicação frontend desenvolvida com **Angular** com foco em **componentização, organização de interface e reutilização de código**, utilizando a biblioteca de UI **Angular Material**.
+## Curso 1
 
-O projeto simula a interface de uma plataforma de viagens, permitindo explorar boas práticas de **arquitetura de componentes e design consistente em aplicações Angular**.
+**Angular: Componentização e Design com Angular Material**
 
----
+Neste primeiro momento, o foco foi estruturar a interface da aplicação.
 
-# 🎯 Objetivos do Projeto
+Principais tópicos trabalhados:
 
-Este projeto foi desenvolvido para aprofundar conceitos fundamentais de desenvolvimento frontend com Angular moderno.
+* Criação de **componentes reutilizáveis**
+* Organização da aplicação em **módulos e camadas**
+* Construção da interface com **Angular Material**
+* Implementação de layout responsivo
+* Estrutura inicial da aplicação Angular
 
-Principais objetivos:
-
-* Desenvolver **componentes reutilizáveis**
-* Estruturar aplicações Angular de forma escalável
-* Aplicar boas práticas de **componentização**
-* Construir interfaces modernas com **Angular Material**
-* Organizar layout e navegação de forma modular
+Neste estágio, a aplicação possuía **principalmente a camada visual**.
 
 ---
 
-# 🧩 Conceitos Aplicados
+## Curso 2
 
-## Componentização
+**Angular: Componentização, Formulários e Interação com APIs**
 
-A aplicação é dividida em **componentes independentes**, cada um responsável por uma parte específica da interface.
+No segundo curso, a aplicação passou a ter **comportamento e lógica de negócio**, aproximando o projeto de um cenário real de desenvolvimento.
 
-Benefícios:
+Principais conceitos aplicados:
 
-* Reutilização de código
-* Melhor organização da aplicação
-* Manutenção facilitada
-* Escalabilidade do projeto
+### Serviços e Arquitetura
 
----
-
-## Reaproveitamento de Componentes
-
-Componentes visuais foram projetados para serem reutilizados em diferentes partes da aplicação, reduzindo duplicação de código e aumentando consistência visual.
+* Introdução ao uso de **services** no **Angular**
+* Compreensão do escopo de serviços
+* Aplicação do padrão **Singleton** para gerenciamento de estado
 
 ---
 
-## Arquitetura de Interface
+### Gerenciamento de Estado do Formulário
 
-A estrutura da aplicação foi planejada para separar responsabilidades entre:
+Foi criado um **serviço responsável por controlar o estado do formulário**, centralizando:
 
-* layout
-* componentes visuais
-* dados exibidos
+* criação do `FormGroup`
+* definição dos `FormControls`
+* compartilhamento do formulário entre componentes
 
-Isso torna o código **mais legível e fácil de evoluir**.
+Isso melhora:
 
----
-
-## Design System com Angular Material
-
-Para construção da interface foi utilizada a biblioteca **Angular Material**, que fornece componentes prontos e acessíveis.
-
-Exemplos utilizados no projeto:
-
-* Botões
-* Toolbar
-* Cards
-* Layouts responsivos
-* Modal
-
-Isso permite construir interfaces **modernas, consistentes e alinhadas com o Material Design**.
+* reutilização
+* organização da lógica
+* manutenção do código
 
 ---
 
-# 🏗 Estrutura do Projeto
+### Reactive Forms
 
-Estrutura simplificada da aplicação:
+Implementação de formulários utilizando **Reactive Forms**, permitindo:
 
-```
-jornada-milhas/
-│
-├── src/
-│   ├── app/
-│   │   ├── pages/
-│   │   ├── shared/
-│   │   ├── app.component.html
-│   │   ├── app-routing.module.ts
-│   │   └── app.module.ts
-│   │
-│   └── assets/
-│
-├── angular.json
-└── package.json
-```
-
-Organização baseada em:
-
-* separação por responsabilidade
-* reutilização de componentes
-* clareza estrutural
+* validação estruturada
+* controle de estado do formulário
+* integração com serviços da aplicação
 
 ---
 
-# 🛠 Tecnologias Utilizadas
+### Componentes com Form Control
 
-* **Framework:** Angular
-* **Versão:** Angular 16
-* **Linguagem:** TypeScript
-* **UI Library:** Angular Material
-* **Gerenciador de pacotes:** npm
+Foi desenvolvido um **componente customizado que implementa um Form Control**, permitindo:
 
----
+* receber um `FormControl` externo
+* atualizar dinamicamente o número de passageiros
+* integrar com o formulário principal da aplicação
 
-# ▶️ Como Executar o Projeto
-
-## 1️⃣ Instalar dependências
-
-```bash
-#Instalando angular 16
-npm install -g @angular/cli@16.0.0
-```
-
-```bash
-#Instalando angular material
-ng add @angular/material
-```
+Esse padrão permite criar **componentes reutilizáveis integrados ao sistema de formulários do Angular**.
 
 ---
 
-## 2️⃣ Executar servidor de desenvolvimento
+### Consumo de Dados e Cache
 
-```bash
-ng serve
-```
+Também foi implementada uma camada simples de **cache para dados da aplicação**, reduzindo chamadas repetidas à API.
 
 ---
 
-## 3️⃣ Acessar aplicação
+# 🧠 Experiência de Desenvolvimento
 
-```
-http://localhost:4200
-```
+Durante esta etapa da trilha, o desenvolvimento simulou um cenário real de mercado:
 
----
+* trabalhar em uma aplicação já existente
+* evoluir funcionalidades a partir de um **layout definido em Figma**
+* refatorar código existente
+* implementar novas funcionalidades de forma incremental
 
-# 📚 Aprendizados Relevantes
-
-Durante o desenvolvimento deste projeto foram consolidados conhecimentos importantes:
-
-* Criação de **componentes eficientes em Angular**
-* Identificação de partes da aplicação que podem ser **componentizadas**
-* Organização de aplicações Angular de forma **escalável**
-* Equilíbrio entre **componentização e reaproveitamento de código**
-* Construção de interfaces modernas com **Angular Material**
+Essa abordagem reforça práticas importantes de **manutenção e evolução de sistemas frontend**.
 
 ---
 
-# 🧠 Habilidades Desenvolvidas
+## Resultado desta Etapa
 
-Este projeto contribuiu para evolução nas seguintes áreas:
+Após os dois primeiros cursos da trilha, o projeto evoluiu de:
 
-* Arquitetura de frontend
-* Design de componentes reutilizáveis
-* Organização de aplicações Angular
-* Desenvolvimento de interfaces com Material Design
+**Interface estática**
 
----
+➡️ para
 
-# 📌 Contexto de Aprendizado
-
-Projeto desenvolvido durante o curso **Angular: Componentização e Design com Angular Material** da plataforma **Alura**, com adaptações e melhorias aplicadas para reforçar o aprendizado.
-
-A versão do framework utilizada no treinamento foi **Angular 16**.
-
----
-
-# 📁 Parte do Repositório
-
-Este projeto integra o repositório **fullstack-learning-path**, que documenta a evolução prática em tecnologias de desenvolvimento full stack.
+**Aplicação Angular com comportamento, formulários e serviços**
 
 ---
