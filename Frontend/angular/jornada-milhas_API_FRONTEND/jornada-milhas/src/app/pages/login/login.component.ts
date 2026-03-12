@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit{
       next: (value) => {
         console.log('Login realizado com sucesso', value)
         this.router.navigateByUrl('/')
+        this.loginForm.reset();
       },
       error: (err) => {
         console.log('Erro no login', err)
